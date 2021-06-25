@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1 {
+        mix-blend-mode: screen;
+      }
+    </style>
+  </defs>
+  <image id="telephone" class="cls-1" width="24" height="24" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABk0lEQVRIia2VoUuDURTFf24w0aDBprb5J2yWGUQwCf4FZnFgMi1MWBMMS3YxLFsmIgy0iWFBk+LKtCmIYQxUULl4Prh8bO7T9x145d73zuFx7z0Xh3mgBXwCj8C6T4bCyDvAF3ACvABvQDEN8hlHXlasKIGu8kE4EPlOjGRT8TMgGyLwDNwMyR1KpBoiYATHQ3ITwD3wGiJwBzwB40Py50A/RGBXv9gYkMuJ/CJEYA54By4H5JYkXgsRwBVzJRavKL4cKrAAfABtIOPi+xIohAoY6iLbdrGSYh1NexCm5EE9IO+IymmKrIqsHWvbVEX2RNYAxoaIFFT4mlq4r2GsJrEVu9AUWT2Wi0T86WsYO867RhrkJHDlRPxPSuquiuYkp7jZypHedJNY/bQTafxiJXFsyertrCX5SdMVPj/qgbCopdVNcjnrCt/TnGQSvDvV+k0Ma+EH95u4rXhEzdD6i4DBhtGKbuZoBGaQ5sK+PrYZo3Y2I/0XzLvMICMh2ye2tK7THEjDrPbJrYht/dqO/5kD4BvqB3YDrWxxhwAAAABJRU5ErkJggg=="/>
+</svg>
