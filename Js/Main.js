@@ -160,6 +160,7 @@ pin.fontFamily = "Montserrat";
 pin.label = new am4core.Label();
 pin.label.text = "{title}";
 pin.label.fill = am4core.color("#fff");
+pin.fontSize = 12;
 if (document.documentElement.clientWidth < 770) {
   pin.fontSize = 10;
 }
