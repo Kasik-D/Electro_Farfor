@@ -101,6 +101,10 @@ body {
   /* background-color: blueviolet; */
 }
 
+.header.header_about_as {
+  background-color: #000;
+}
+
 .header__body {
   position: relative;
 
@@ -353,6 +357,110 @@ body {
     display: none;
   }
 }
+
+/* footer //////////////////////////////////////////////////////////////////////////////////////// */
+
+.footer {
+  background-color: #fff;
+}
+
+.footer__container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0px 30px;
+}
+
+.footer__body {
+  padding: 118px 0px;
+}
+
+.footer__links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer__link {
+  font-family: "Montserrat", sans-serif;
+  margin: 0px 24px 20px;
+}
+
+.footer_logo_con {
+  transform: scale(0);
+  transition: all 0.8s ease 0s;
+  margin: 0px 20px 20px;
+}
+
+.footer_logo_con._active {
+  transform: scale(1);
+}
+
+.footer__link__label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+  margin: 0px 0px 4px 0px;
+  transform: translate(0px, 120%);
+  opacity: 0;
+  transition: all 0.8s ease 0.7s;
+}
+
+.footer__link__label._active {
+  transform: translate(0px, 0px);
+  opacity: 1;
+}
+
+.footer__link__text {
+  margin: 0px 0px 4px 0px;
+  transform: translate(0px, 120%);
+  opacity: 0;
+  transition: all 0.8s ease 0.7s;
+}
+
+.footer__link__text._active {
+  transform: translate(0px, 0px);
+  opacity: 1;
+}
+
+.footer__link__text a {
+  font-size: 16px;
+  font-weight: 400;
+  color: #4d4d4d;
+  text-decoration: none;
+  margin: 0px 0px 8px 0px;
+  transition: 0.3s all ease;
+}
+
+.footer__link__text a:hover {
+  color: rgb(243, 146, 53);
+}
+
+@media (max-width: 1330px) {
+  .footer__body {
+    padding: 70px 0px;
+  }
+}
+
+@media (max-width: 430px) {
+  .footer__links {
+    display: block;
+  }
+}
+
+@media (max-width: 386px) {
+  .footer__body {
+    padding: 30px 0px;
+  }
+  .footer__link__text a {
+    font-size: 14px;
+  }
+  .footer__link__label {
+    font-size: 14px;
+  }
+}
+
+/* MAIN HTML ........................................................................................ */
 
 /* Main video ////////////////////////////////////////////////////////////////////////////////////// */
 
@@ -1022,104 +1130,446 @@ input.form__field {
   display: block;
 }
 
-/* footer //////////////////////////////////////////////////////////////////////////////////////// */
+/* ABOUT AS ........................................................................................ */
 
-.footer {
+.about__titile {
   background-color: #fff;
 }
 
-.footer__container {
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 0px 30px;
+.about__titile__body {
+  padding: 240px 0px 126px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.footer__body {
-  padding: 118px 0px;
+.about__titile__label {
+  font-family: "Montserrat", sans-serif;
+  font-size: 160px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  max-width: 700px;
+  line-height: 200px;
+  transform: translate(0px, -100%);
+  opacity: 0;
+  transition: all 0.8s ease 0.3s;
 }
 
-.footer__links {
+.about__titile__label._active {
+  transform: translate(0px, 0px);
+  opacity: 1;
+}
+
+.about__titile__label h1 {
+  /* ff 3.6+ */
+  background: -moz-radial-gradient(
+    circle at 91% 38%,
+    rgba(0, 0, 0, 1) 44%,
+    rgba(243, 146, 53, 1) 45%
+  );
+
+  /* safari 5.1+,chrome 10+ */
+  background: -webkit-radial-gradient(
+    circle at 91% 38%,
+    rgba(0, 0, 0, 1) 44%,
+    rgba(243, 146, 53, 1) 45%
+  );
+
+  /* opera 11.10+ */
+  background: -o-radial-gradient(
+    circle at 91% 38%,
+    rgba(0, 0, 0, 1) 44%,
+    rgba(243, 146, 53, 1) 45%
+  );
+
+  /* ie 10+ */
+  background: -ms-radial-gradient(
+    circle at 91% 38%,
+    rgba(0, 0, 0, 1) 44%,
+    rgba(243, 146, 53, 1) 45%
+  );
+
+  /* global 92%+ browsers support */
+  background: radial-gradient(
+    circle at 91% 38%,
+    rgba(0, 0, 0, 1) 44%,
+    rgba(243, 146, 53, 1) 45%
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 1300px) {
+  .about__titile__body {
+    padding: 110px 0px 80px 0px;
+  }
+  .about__titile__label {
+    font-size: 120px;
+  }
+}
+
+@media (max-width: 750px) {
+  .about__titile__label {
+    font-size: 80px;
+    line-height: 100px;
+  }
+}
+
+@media (max-width: 450px) {
+  .about__titile__label {
+    font-size: 60px;
+    line-height: 80px;
+  }
+}
+
+/* About_history //////////////////////////////////////////////////////////////////////////////// */
+
+.about_history {
+  background-color: #fbfbfb;
+}
+
+.about_history__body {
+  padding: 150px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.about_history__text {
+  padding-right: 50px;
+}
+
+.__text__text.about_history__text__text {
+  margin-bottom: 25px;
+  max-width: 666px;
+}
+
+.main_about__as__prhoto.about_history__as__prhoto {
+  flex: 0 0 900px;
+}
+
+@media (max-width: 1300px) {
+  .about_history__body {
+    padding: 100px 0px;
+    align-items: center;
+  }
+  .main_about__as__prhoto.about_history__as__prhoto {
+    flex: 0 0 600px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .main_about__as__prhoto.about_history__as__prhoto {
+    display: none;
+  }
+  .about_history__body {
+    padding: 50px 0px;
+  }
+}
+
+/* about_product ///////////////////////////////////////////////////////////////// */
+
+.about_product {
+  background-color: #fff;
+}
+
+.about_product__body {
+  padding: 147px 0px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
 }
 
-.footer__link {
-  font-family: "Montserrat", sans-serif;
-  margin: 0px 24px 20px;
+.about_product__text {
+  max-width: 645px;
+  padding-right: 40px;
 }
 
-.footer_logo_con {
+.about_product__text__text {
+  margin-bottom: 35px;
+}
+
+.about_product__text__text__2 {
+  margin-bottom: 50px;
+  max-width: 392px;
+  text-align: center;
+}
+
+.about_product__advantages {
+  padding-top: 235px;
+  width: 100%;
+  padding-left: 30px;
+}
+
+.about_product__advantages__items {
+  position: relative;
+}
+
+.about_product__advantages__item__photo__patch__check {
+  position: absolute;
+  top: -361px;
+  right: 343px;
+}
+
+.about_product__advantages__item__photo__lightning {
+  position: absolute;
+  top: -270px;
+  right: 560px;
+}
+
+.about_product__advantages__item__photo__person__check {
+  position: absolute;
+  top: -270px;
+  right: 126px;
+}
+
+/* 18px */
+
+.about_product__advantages__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about_product__advantages__item__photo {
+  background-color: #e5e5e5;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  transition: all 0.8s ease 0.2s;
   transform: scale(0);
-  transition: all 0.8s ease 0s;
-  margin: 0px 20px 20px;
 }
 
-.footer_logo_con._active {
+.about_product__advantages__item__photo._active {
   transform: scale(1);
 }
 
-.footer__link__label {
-  font-size: 16px;
-  font-weight: 600;
+.about_product__advantages__item__photo img {
+  max-width: 100%;
+}
+
+.about_product__advantages__item__text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
   color: #000;
-  margin: 0px 0px 4px 0px;
+  max-width: 235px;
+  text-align: center;
+  transition: all 0.8s ease 0.2s;
   transform: translate(0px, 120%);
   opacity: 0;
-  transition: all 0.8s ease 0.7s;
+  
 }
 
-.footer__link__label._active {
-  transform: translate(0px, 0px);
+.about_product__advantages__item__text._active {
+  transform: translate(0px,0px);
   opacity: 1;
 }
 
-.footer__link__text {
-  margin: 0px 0px 4px 0px;
-  transform: translate(0px, 120%);
-  opacity: 0;
-  transition: all 0.8s ease 0.7s;
+.about_product__text__buttom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
 
-.footer__link__text._active {
-  transform: translate(0px, 0px);
-  opacity: 1;
+.about_product__text__text__2 {
+  position: absolute;
+  right: 231px;
 }
 
-.footer__link__text a {
-  font-size: 16px;
-  font-weight: 400;
-  color: #4d4d4d;
-  text-decoration: none;
-  margin: 0px 0px 8px 0px;
-  transition: 0.3s all ease;
+.about_product__btn {
+  position: absolute;
+  right: 332px;
+  top: 126px;
 }
 
-.footer__link__text a:hover {
-  color: rgb(243, 146, 53);
-}
-
-@media (max-width: 1330px) {
-  .footer__body {
-    padding: 70px 0px;
+@media (max-width: 1574px) {
+  .about_product__text {
+    max-width: 550px;
+    padding-right: 30px;
   }
 }
 
-@media (max-width: 430px) {
-  .footer__links {
+@media (max-width: 1458px) {
+  .about_product__text {
+    max-width: 450px;
+    padding-right: 30px;
+  }
+  .about_product__advantages {
+    padding-top: 150px;
+    padding-left: 10px;
+  }
+  .about_product__body {
+    padding: 100px 0px;
+  }
+}
+
+@media (max-width: 1328px) {
+  .about_product__advantages__item__photo__person__check {
+    right: 18px;
+  }
+  .about_product__advantages__item__photo__patch__check {
+    right: 235px;
+  }
+  .about_product__advantages__item__photo__lightning {
+    right: 452px;
+  }
+  .about_product__text__text__2 {
+    right: 123px;
+  }
+  .about_product__btn {
+    right: 224px;
+  }
+}
+
+@media (max-width: 1222px) {
+  .about_product__text {
+    max-width: 400px;
+    padding-right: 30px;
+  }
+}
+
+@media (max-width: 1151px) {
+  .about_product__advantages__item__photo {
+    width: 50px;
+    height: 50px;
+  }
+  .about_product__advantages__item__photo img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+  }
+  .about_product__advantages__item__photo__person__check {
+    right: 18px;
+  }
+  .about_product__advantages__item__photo__patch__check {
+    right: 200px;
+  }
+  .about_product__advantages__item__photo__lightning {
+    right: 374px;
+  }
+  .about_product__text__text__2 {
+    top: -50px;
+    right: 66px;
+  }
+  .about_product__btn {
+    right: 155px;
+    top: 67px;
+  }
+  .about_product__advantages__item__text {
+    max-width: 167px;
+  }
+}
+
+@media (max-width: 994px) {
+  .about_product__advantages__item__text {
+    max-width: 310px;
+  }
+  .about_product__advantages__item__photo__patch__check {
+    right: 58px;
+  }
+  .about_product__advantages__item__photo__lightning {
+    right: 54px;
+    top: -105px;
+  }
+  .about_product__advantages__item__photo__person__check {
+    right: 54px;
+    top: -230px;
+  }
+  .about_product__text__text__2 {
+    top: 49px;
+    right: 53px;
+    max-width: 300px;
+  }
+  .about_product__btn {
+    right: 120px;
+    top: 188px;
+  }
+}
+
+@media (max-width: 854px) {
+  .about_product__text {
+    max-width: 300px;
+    padding-right: 30px;
+  }
+  .about_product__body {
+    padding: 66px 0px;
+  }
+  .about_product__advantages {
+    padding-top: 70px;
+    padding-left: 10px;
+  }
+}
+
+@media (max-width: 762px) {
+  .about_product__text {
+    max-width: 500px;
+  }
+  .about_product__body {
     display: block;
   }
+  .about_product__advantages__item__photo__lightning {
+    position: static;
+  }
+  .about_product__advantages__item__photo__person__check {
+    position: static;
+  }
+  .about_product__advantages__item__photo__patch__check {
+    position: static;
+  }
+  .about_product__advantages {
+    padding-top: 30px;
+    padding-left: 10px;
+  }
+  .about_product__advantages__items {
+    display: flex;
+    justify-content: space-between;
+  }
+  .about_product__advantages__item {
+    margin-right: 20px;
+  }
+  .about_product__text__buttom {
+    display: flex;
+    margin-top: 30px;
+  }
+  .about_product__text__text__2 {
+    position: static;
+    text-align: center;
+  }
+  .about_product__btn {
+    position: static;
+  }
 }
 
-@media (max-width: 386px) {
-  .footer__body {
-    padding: 30px 0px;
+@media (max-width: 450px) {
+  .about_product__advantages__items {
+    display: block;
   }
-  .footer__link__text a {
-    font-size: 14px;
+  .about_product__advantages__item {
+    margin-right: 0px;
+    margin-bottom: 30px;
   }
-  .footer__link__label {
-    font-size: 14px;
+  .about_product__body {
+    padding: 40px 0px;
   }
+  .about_product__text__buttom {
+    margin-top: 30px;
+    align-items: flex-start;
+  }
+  .about_product__text__text__2 {
+    text-align: left;
+  }
+}
+
+/* about_our__partners */
+
+.about_our__partners {
+  background-color: #fbfbfb;
 }
