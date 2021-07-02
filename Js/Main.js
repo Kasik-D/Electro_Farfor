@@ -34,24 +34,27 @@ $(".form__field_phone").keyup(function () {
   Value.val(Value.val().replace(/[^0-9\.]/g, ""));
 });
 
-form.addEventListener("submit", function (event) {
-  event.preventDefault();
-  if (name_input.value.length < 8) {
-    $(".name").addClass("detailed_catalog_name_input_validate");
-  } else {
-    $(".name").removeClass("detailed_catalog_name_input_validate");
-  }
-  if (phone_input.value.length < 7) {
-    $(".phone").addClass("detailed_catalog_phone_input_validate");
-  } else {
-    $(".phone").removeClass("detailed_catalog_phone_input_validate");
-  }
-  if (!checkEmail(email_input.value)) {
-    $(".email").addClass("detailed_catalog_email_input_validate");
-  } else {
-    $(".email").removeClass("detailed_catalog_email_input_validate");
-  }
-});
+if (!form) {
+} else {
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    if (name_input.value.length < 8) {
+      $(".name").addClass("detailed_catalog_name_input_validate");
+    } else {
+      $(".name").removeClass("detailed_catalog_name_input_validate");
+    }
+    if (phone_input.value.length < 7) {
+      $(".phone").addClass("detailed_catalog_phone_input_validate");
+    } else {
+      $(".phone").removeClass("detailed_catalog_phone_input_validate");
+    }
+    if (!checkEmail(email_input.value)) {
+      $(".email").addClass("detailed_catalog_email_input_validate");
+    } else {
+      $(".email").removeClass("detailed_catalog_email_input_validate");
+    }
+  });
+}
 
 $(document).ready(function () {
   $(".header__burger").click(function () {
