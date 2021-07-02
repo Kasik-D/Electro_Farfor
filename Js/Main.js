@@ -1,3 +1,58 @@
+// Валидация форми ....................................................................................
+
+function checkEmail(emailAddress) {
+  var sQtext = "[^\\x0d\\x22\\x5c\\x80-\\xff]";
+  var sDtext = "[^\\x0d\\x5b-\\x5d\\x80-\\xff]";
+  var sAtom =
+    "[^\\x00-\\x20\\x22\\x28\\x29\\x2c\\x2e\\x3a-\\x3c\\x3e\\x40\\x5b-\\x5d\\x7f-\\xff]+";
+  var sQuotedPair = "\\x5c[\\x00-\\x7f]";
+  var sDomainLiteral = "\\x5b(" + sDtext + "|" + sQuotedPair + ")*\\x5d";
+  var sQuotedString = "\\x22(" + sQtext + "|" + sQuotedPair + ")*\\x22";
+  var sDomain_ref = sAtom;
+  var sSubDomain = "(" + sDomain_ref + "|" + sDomainLiteral + ")";
+  var sWord = "(" + sAtom + "|" + sQuotedString + ")";
+  var sDomain = sSubDomain + "(\\x2e" + sSubDomain + ")*";
+  var sLocalPart = sWord + "(\\x2e" + sWord + ")*";
+  var sAddrSpec = sLocalPart + "\\x40" + sDomain; // complete RFC822 email address spec
+  var sValidEmail = "^" + sAddrSpec + "$"; // as whole string
+
+  var reValidEmail = new RegExp(sValidEmail);
+
+  return reValidEmail.test(emailAddress);
+}
+
+let btn = document.querySelector(".validate__btn");
+
+let form = document.querySelector(".validate_form");
+
+let name_input = document.querySelector(".form__field_name");
+let phone_input = document.querySelector(".form__field_phone");
+let email_input = document.querySelector(".form__field_email");
+
+$(".form__field_phone").keyup(function () {
+  var Value = $(".form__field_phone");
+  Value.val(Value.val().replace(/[^0-9\.]/g, ""));
+});
+
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+  if (name_input.value.length < 8) {
+    $(".name").addClass("detailed_catalog_name_input_validate");
+  } else {
+    $(".name").removeClass("detailed_catalog_name_input_validate");
+  }
+  if (phone_input.value.length < 7) {
+    $(".phone").addClass("detailed_catalog_phone_input_validate");
+  } else {
+    $(".phone").removeClass("detailed_catalog_phone_input_validate");
+  }
+  if (!checkEmail(email_input.value)) {
+    $(".email").addClass("detailed_catalog_email_input_validate");
+  } else {
+    $(".email").removeClass("detailed_catalog_email_input_validate");
+  }
+});
+
 $(document).ready(function () {
   $(".header__burger").click(function () {
     $(
@@ -268,58 +323,3 @@ imageSeries.data = [
     length: document.documentElement.clientWidth < 770 ? 38 : 80,
   },
 ];
-
-// Валидация форми ....................................................................................
-
-function checkEmail(emailAddress) {
-  var sQtext = "[^\\x0d\\x22\\x5c\\x80-\\xff]";
-  var sDtext = "[^\\x0d\\x5b-\\x5d\\x80-\\xff]";
-  var sAtom =
-    "[^\\x00-\\x20\\x22\\x28\\x29\\x2c\\x2e\\x3a-\\x3c\\x3e\\x40\\x5b-\\x5d\\x7f-\\xff]+";
-  var sQuotedPair = "\\x5c[\\x00-\\x7f]";
-  var sDomainLiteral = "\\x5b(" + sDtext + "|" + sQuotedPair + ")*\\x5d";
-  var sQuotedString = "\\x22(" + sQtext + "|" + sQuotedPair + ")*\\x22";
-  var sDomain_ref = sAtom;
-  var sSubDomain = "(" + sDomain_ref + "|" + sDomainLiteral + ")";
-  var sWord = "(" + sAtom + "|" + sQuotedString + ")";
-  var sDomain = sSubDomain + "(\\x2e" + sSubDomain + ")*";
-  var sLocalPart = sWord + "(\\x2e" + sWord + ")*";
-  var sAddrSpec = sLocalPart + "\\x40" + sDomain; // complete RFC822 email address spec
-  var sValidEmail = "^" + sAddrSpec + "$"; // as whole string
-
-  var reValidEmail = new RegExp(sValidEmail);
-
-  return reValidEmail.test(emailAddress);
-}
-
-let btn = document.querySelector(".validate__btn");
-
-let form = document.querySelector(".validate_form");
-
-let name_input = document.querySelector(".form__field_name");
-let phone_input = document.querySelector(".form__field_phone");
-let email_input = document.querySelector(".form__field_email");
-
-$(".form__field_phone").keyup(function () {
-  var Value = $(".form__field_phone");
-  Value.val(Value.val().replace(/[^0-9\.]/g, ""));
-});
-
-form.addEventListener("submit", function (event) {
-  event.preventDefault();
-  if (name_input.value.length < 8) {
-    $(".name").addClass("detailed_catalog_name_input_validate");
-  } else {
-    $(".name").removeClass("detailed_catalog_name_input_validate");
-  }
-  if (phone_input.value.length < 7) {
-    $(".phone").addClass("detailed_catalog_phone_input_validate");
-  } else {
-    $(".phone").removeClass("detailed_catalog_phone_input_validate");
-  }
-  if (!checkEmail(email_input.value)) {
-    $(".email").addClass("detailed_catalog_email_input_validate");
-  } else {
-    $(".email").removeClass("detailed_catalog_email_input_validate");
-  }
-});

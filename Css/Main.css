@@ -10,6 +10,10 @@ body {
   padding: 0px 30px;
 }
 
+.container_contact {
+  max-width: 1380px;
+}
+
 /* common styles ///////////////////////////////////////////////////////////////////////////////// */
 
 .__text__title {
@@ -101,7 +105,7 @@ body {
   /* background-color: blueviolet; */
 }
 
-.header.header_about_as {
+.header.header_black {
   background-color: #000;
 }
 
@@ -1364,11 +1368,10 @@ input.form__field {
   transition: all 0.8s ease 0.2s;
   transform: translate(0px, 120%);
   opacity: 0;
-  
 }
 
 .about_product__advantages__item__text._active {
-  transform: translate(0px,0px);
+  transform: translate(0px, 0px);
   opacity: 1;
 }
 
@@ -1572,4 +1575,288 @@ input.form__field {
 
 .about_our__partners {
   background-color: #fbfbfb;
+}
+
+/* contact_us HTML .................................................................. */
+
+.contact_us {
+  background-color: #fff;
+}
+
+.contact_us__body {
+  padding: 250px 0px 150px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact_us__contacts__links__ {
+  transform: translate(0px, -120%);
+  opacity: 0;
+  transition: all 0.8s ease 0.7s;
+}
+
+.contact_us__contacts__links__._active {
+  transform: translate(0px, 0px);
+  opacity: 1;
+}
+
+.contact_us__contacts__tels {
+  padding-left: 60px;
+  position: relative;
+}
+
+.contact_us__contacts__tel {
+  margin-bottom: 40px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.contact_us__contacts__tel a {
+  text-decoration: none;
+  color: #000;
+}
+
+.contact_us__contacts__tel__img {
+  position: absolute;
+  top: -8px;
+  left: 7px;
+}
+
+.contact_us__contacts__emails {
+  padding-left: 60px;
+  position: relative;
+}
+
+.contact_us__contacts__email {
+  margin-bottom: 40px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.contact_us__contacts__email a {
+  text-decoration: none;
+  color: #000;
+}
+
+.contact_us__contacts__email__img {
+  position: absolute;
+  top: -3px;
+  left: 0px;
+}
+
+.contact_us__contacts__links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 205px;
+  margin: 60px 0px 0px 60px;
+}
+
+.contact_us__works__time {
+  transition: all 0.8s ease 0.7s;
+  transform: scale(0);
+}
+
+.contact_us__works__time._active {
+  transform: scale(1);
+}
+
+.contact_us__works__time__body {
+  background-color: #fff;
+  padding: 35px 80px 70px;
+  -webkit-box-shadow: 9px 10px 18px -3px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 9px 10px 18px -3px rgba(34, 60, 80, 0.2);
+  box-shadow: 9px 10px 18px -3px rgba(34, 60, 80, 0.2);
+}
+
+.contact_us__works__time__label {
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #000;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.contact_us__works__time__label.contact_us__works__time__label__2 {
+  margin-bottom: 50px;
+}
+
+.contact_us__works__time__text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: #000;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 1200px) {
+  .contact_us__body {
+    padding: 150px 0px 80px;
+  }
+}
+
+@media (max-width: 970px) {
+  .contact_us__body {
+    display: block;
+  }
+  .contact_us__works__time {
+    margin-top: 60px;
+  }
+  .contact_us__works__time__body {
+    background-color: #fff;
+    padding: 0px 0px 0px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .contact_us__contacts__email {
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+  .contact_us__contacts__tel {
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+  .contact_us__contacts__email__img {
+    top: -6px;
+  }
+  .contact_us__contacts__tel__img {
+    top: -9px;
+  }
+}
+
+@media (max-width: 420px) {
+  .contact_us__body {
+    padding: 100px 0px 40px;
+    display: block;
+  }
+  .contact_us__contacts__tel__img {
+    display: none;
+  }
+  .contact_us__contacts__email__img {
+    display: none;
+  }
+  .contact_us__contacts__tels {
+    padding-left: 0px;
+  }
+  .contact_us__contacts__emails {
+    padding-left: 0px;
+  }
+  .contact_us__contacts__links {
+    justify-content: space-around;
+    max-width: 100%;
+    margin: 60px 0px 0px 0px;
+  }
+}
+
+@media (max-width: 340px) {
+  .contact_us__contacts__email {
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+  .contact_us__contacts__tel {
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+  .contact_us__contacts__links {
+    margin: 30px 0px 0px 0px;
+  }
+}
+
+/* for__partners ///////////////////////////////////////////////////////////////////// */
+
+.for__partners {
+  background-color: #fff;
+}
+
+.for__partners__body {
+  padding: 100px 0px;
+}
+
+.for__partners__text {
+  max-width: 1160px;
+  margin-bottom: 25px;
+}
+
+.for__partners__text:last-child {
+  margin-bottom: 0px;
+}
+
+@media (max-width: 1200px) {
+  .for__partners__body {
+    padding: 80px 0px;
+  }
+}
+
+@media (max-width: 600px) {
+  .for__partners__body {
+    padding: 40px 0px;
+  }
+}
+
+/* contact__question ///////////////////////////////////////////////////////////////// */
+
+.contact__question {
+  background-color: #fbfbfb;
+}
+
+.contact__question__body {
+  padding: 80px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact__question__text {
+  padding-right: 30px;
+}
+
+.contact__question__text__text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  max-width: 480px;
+  line-height: 24px;
+}
+
+.contact__question__text__text__link {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #000;
+}
+
+.validate_form__contacts {
+  width: 100%;
+  max-width: 560px;
+}
+
+@media (max-width: 1200px) {
+  .contact__question__body {
+    padding: 50px 0px;
+  }
+  .validate_form__contacts {
+  }
+}
+
+@media (max-width: 750px) {
+  .contact__question__body {
+    padding: 40px 0px;
+  }
+  .contact__question__body {
+    display: block;
+  }
+}
+
+@media (max-width: 450px) {
+  .detailed_catalog_input_body__contact {
+    padding: 30px;
+  }
 }
