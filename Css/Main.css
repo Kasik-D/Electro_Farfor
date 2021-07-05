@@ -2352,3 +2352,107 @@ div#pop-up {
   -moz-box-shadow: 0px 0px 67px -17px rgba(34, 60, 80, 0.21);
   box-shadow: 0px 0px 67px -17px rgba(34, 60, 80, 0.21);
 }
+
+/* Product catalog HTML ......................................................................... */
+
+/* product__catalog //////////////////////////////////////////////////////////////////////// */
+
+.product__catalog {
+  background-color: #fff;
+}
+
+.product__catalog__body {
+  padding: 200px 0px 100px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.product__catalog__items {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin: 100px -25px 0px;
+}
+
+.product__catalog__item {
+  margin: 0px 25px 120px;
+  color: #fff;
+  transform: translate(0px, 60%);
+  opacity: 0;
+  transition: all 0.8s ease 0s;
+  padding: 0px 25px;
+}
+
+.product__catalog__item._active {
+  transform: translate(0px, 0px);
+  opacity: 1;
+}
+
+.product__catalog__item:hover {
+  -webkit-box-shadow: 0px 0px 67px -17px rgba(34, 60, 80, 0.21);
+  -moz-box-shadow: 0px 0px 67px -17px rgba(34, 60, 80, 0.21);
+  box-shadow: 0px 0px 67px -17px rgba(34, 60, 80, 0.21);
+  color: #f39235;
+}
+
+.__text__title__product__catalog {
+  transform: translate(0px, -120%);
+}
+
+.product__catalog__item__text {
+  background-color: #000;
+  padding: 16px;
+  text-transform: uppercase;
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0px -25px;
+}
+
+@media (max-width: 1490px) {
+  .product__catalog__items {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin: 100px -25px 0px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .product__catalog__body {
+    padding: 140px 0px;
+  }
+}
+
+@media (max-width: 995px) {
+  .product__catalog__body {
+    padding: 130px 0px 100px;
+  }
+}
+
+@media (max-width: 600px) {
+  .product__catalog__item__photo img {
+    object-fit: contain;
+    width: 300px;
+  }
+}
+
+@media (max-width: 450px) {
+  .product__catalog__item__photo img {
+    object-fit: contain;
+    width: 200px;
+  }
+  .product__catalog__item {
+    margin: 0px 25px 60px;
+  }
+  .product__catalog__item__text {
+    font-size: 18px;
+  }
+  .product__catalog__items {
+    margin: 60px -25px 0px;
+  }
+  .product__catalog__body {
+    padding: 100px 0px 20px;
+  }
+}
+
