@@ -174,27 +174,27 @@ hs.properties.fill = am4core.color("#000");
 polygonSeries.exclude = ["AQ"];
 
 polygonSeries.data = [
-  {
-    id: "UA-07",
-    name: "Volyn",
-    fill: am4core.color("#f39235"),
-    dataff: "fffe",
-  },
-  {
-    id: "UA-18",
-    name: "Zhytomyr",
-    fill: am4core.color("#f39235"),
-  },
+  //   {
+  //     id: "UA-07",
+  //     name: "Volyn",
+  //     fill: am4core.color("#f39235"),
+  //     dataff: "fffe",
+  //   },
+  //   {
+  //     id: "UA-18",
+  //     name: "Zhytomyr",
+  //     fill: am4core.color("#f39235"),
+  //   },
   {
     id: "UA-59",
     name: "Sumy",
     fill: am4core.color("#f39235"),
   },
-  {
-    id: "UA-71",
-    name: "Cherkasy",
-    fill: am4core.color("#f39235"),
-  },
+  //   {
+  //     id: "UA-71",
+  //     name: "Cherkasy",
+  //     fill: am4core.color("#f39235"),
+  //   },
 ];
 
 // Bind "fill" property to "fill" key in data
@@ -288,47 +288,47 @@ imageSeries.heatRules.push({
 
 //if (document.documentElement.clientWidth < 770)
 // Pin data
-imageSeries.data = [
-  {
-    latitude: 49,
-    longitude: 30.8,
-    value: 12,
-    title: "Cherkasy",
-    class: "Cherkasy",
-    length:
-      document.documentElement.clientWidth < 400
-        ? 20
-        : document.documentElement.clientWidth < 770
-        ? 40
-        : 100,
-  },
-  {
-    latitude: 51,
-    longitude: 25,
-    value: 5,
-    title: "Volyn",
-    length:
-      document.documentElement.clientWidth < 400
-        ? 20
-        : document.documentElement.clientWidth < 770
-        ? 35
-        : 70,
-  },
-  {
-    latitude: 51,
-    longitude: 34,
-    value: 100000,
-    title: "Sumy",
-    length: document.documentElement.clientWidth < 770 ? 40 : 100,
-  },
-  {
-    latitude: 50.5,
-    longitude: 28.5,
-    value: 8,
-    title: "Zhytomyr",
-    length: document.documentElement.clientWidth < 770 ? 38 : 80,
-  },
-];
+// imageSeries.data = [
+//   {
+//     latitude: 49,
+//     longitude: 30.8,
+//     value: 12,
+//     title: "Cherkasy",
+//     class: "Cherkasy",
+//     length:
+//       document.documentElement.clientWidth < 400
+//         ? 20
+//         : document.documentElement.clientWidth < 770
+//         ? 40
+//         : 100,
+//   },
+//   {
+//     latitude: 51,
+//     longitude: 25,
+//     value: 5,
+//     title: "Volyn",
+//     length:
+//       document.documentElement.clientWidth < 400
+//         ? 20
+//         : document.documentElement.clientWidth < 770
+//         ? 35
+//         : 70,
+//   },
+//   {
+//     latitude: 51,
+//     longitude: 34,
+//     value: 100000,
+//     title: "Sumy",
+//     length: document.documentElement.clientWidth < 770 ? 40 : 100,
+//   },
+//   {
+//     latitude: 50.5,
+//     longitude: 28.5,
+//     value: 8,
+//     title: "Zhytomyr",
+//     length: document.documentElement.clientWidth < 770 ? 38 : 80,
+//   },
+// ];
 
 $(function () {
   $(".amcharts-Container-group").css({
@@ -336,36 +336,35 @@ $(function () {
   });
 });
 
-// add events to recalculate map position when the map is moved or zoomed
-chart.events.on("ready", updateCustomMarkers);
-chart.events.on("mappositionchanged", updateCustomMarkers);
+// // add events to recalculate map position when the map is moved or zoomed
+// chart.events.on("ready", updateCustomMarkers);
+// chart.events.on("mappositionchanged", updateCustomMarkers);
 
-// this function will take current images on the map and create HTML elements for them
-function updateCustomMarkers(event) {
-  // go through all of the images
-  imageSeries.mapImages.each(function (image) {
-    // check if it has corresponding HTML element
-    if (!image.dummyData || !image.dummyData.externalElement) {
-      // create onex
-      image.dummyData = {
-        externalElement: createCustomMarker(image),
-      };
-    }
+// // this function will take current images on the map and create HTML elements for them
+// function updateCustomMarkers(event) {
+//   // go through all of the images
+//   imageSeries.mapImages.each(function (image) {
+//     // check if it has corresponding HTML element
+//     if (!image.dummyData || !image.dummyData.externalElement) {
+//       // create onex
+//       image.dummyData = {
+//         externalElement: createCustomMarker(image),
+//       };
+//     }
 
-    // reposition the element accoridng to coordinates
-    var xy = chart.geoPointToSVG({
-      longitude: image.longitude,
-      latitude: image.latitude,
-    });
-    image.dummyData.externalElement.style.top = xy.y + "px";
-    image.dummyData.externalElement.style.left = xy.x + "px";
-  });
-}
+//     // reposition the element accoridng to coordinates
+//     var xy = chart.geoPointToSVG({
+//       longitude: image.longitude,
+//       latitude: image.latitude,
+//     });
+//     image.dummyData.externalElement.style.top = xy.y + "px";
+//     image.dummyData.externalElement.style.left = xy.x + "px";
+//   });
+// }
 
 // this function creates and returns a new marker element
 function createCustomMarker(image) {
   var chart = image.dataItem.component.chart;
-
 
   // create holder
   var holder = document.createElement("div");
@@ -397,4 +396,117 @@ function createCustomMarker(image) {
   return holder;
 }
 
+if ($(window).width() <= 1025) {
+  console.log($(window).width());
+  $(function () {
+    var moveLeft = -100;
+    var moveDown = -380;
 
+    if ($(window).width() <= 1400) {
+      var moveLeft = -300;
+    }
+
+    if ($(window).width() <= 1400) {
+      var moveDown = -250;
+    }
+
+    if ($(window).width() <= 770) {
+      var moveLeft = -400;
+      var moveDown = -150;
+    }
+
+    if ($(window).width() <= 600) {
+      var moveLeft = -300;
+      var moveDown = -150;
+    }
+
+    if ($(window).width() <= 420) {
+      var moveLeft = -230;
+      var moveDown = -150;
+    }
+
+    if ($(window).width() <= 350) {
+      var moveLeft = -180;
+      var moveDown = -150;
+    }
+
+    $(".chartdiv__modal__window").click(function (e) {
+      $("div#pop-up").show();
+      $(".chartdiv").css("z-index", 0);
+      //.css('top', e.pageY + moveDown)
+      //.css('left', e.pageX + moveLeft)
+      //.appendTo('body');
+    });
+
+    $(".pop-up_bac").on("click", function () {
+      $("div#pop-up").hide();
+      $(".chartdiv").css("z-index", 1);
+    });
+
+    $("div.trigger").mousemove(function (e) {
+      $("div#pop-up")
+        .css("top", e.pageY + moveDown)
+        .css("left", e.pageX + moveLeft);
+    });
+  });
+} else {
+  $(function () {
+    var moveLeft = -100;
+    var moveDown = -380;
+
+    if ($(window).width() <= 1400) {
+      var moveLeft = -300;
+    }
+
+    if ($(window).width() <= 1400) {
+      var moveDown = -250;
+    }
+
+    if ($(window).width() <= 770) {
+      var moveLeft = -400;
+      var moveDown = -150;
+    }
+
+    if ($(window).width() <= 600) {
+      var moveLeft = -300;
+      var moveDown = -150;
+    }
+
+    if ($(window).width() <= 420) {
+      var moveLeft = -230;
+      var moveDown = -150;
+    }
+
+    if ($(window).width() <= 350) {
+      var moveLeft = -180;
+      var moveDown = -150;
+    }
+
+    $("div.trigger").hover(
+      function (e) {
+        $("div#pop-up").show();
+        //.css('top', e.pageY + moveDown)
+        //.css('left', e.pageX + moveLeft)
+        //.appendTo('body');
+      },
+      function () {
+        $("div#pop-up").hide();
+      }
+    );
+
+    $("div.trigger").mousemove(function (e) {
+      $("div#pop-up")
+        .css("top", e.pageY + moveDown)
+        .css("left", e.pageX + moveLeft);
+    });
+  });
+
+  // if ($(window).width() <= 1600) {
+  //   $(window).resize(function (e) {
+  //     console.log();
+  //     $(".chartdiv__modal__window")
+  //       .css("right", $(window).width() - 1382)
+  //       .css("top", e.pageX + 0);
+  //   });
+  // }
+}
