@@ -1,3 +1,56 @@
+// pop-up ///////////////////////////////////////////
+
+$(function () {
+  // var moveLeft = -400;
+  // var moveDown = 10;
+
+  $("a.trigger__catalog").hover(
+    function (e) {
+      $(".pop__up__catalog__help").show();
+      $("div#pop__up__catalog").show();
+      //.css('top', e.pageY + moveDown)
+      //.css('left', e.pageX + moveLeft)
+      //.appendTo('body');
+    },
+    function () {
+      $("div#pop__up__catalog").hide();
+    },
+    function () {
+      $(".pop__up__catalog__help").hide();
+    }
+  );
+
+  $("div#pop__up__catalog").hover(
+    function (e) {
+      $("div#pop__up__catalog").show();
+      //.css('top', e.pageY + moveDown)
+      //.css('left', e.pageX + moveLeft)
+      //.appendTo('body');
+    },
+    function () {
+      $("div#pop__up__catalog").hide();
+    }
+  );
+
+  $(".pop__up__catalog__help").hover(
+    function (e) {
+      $("div#pop__up__catalog").show();
+      //.css('top', e.pageY + moveDown)
+      //.css('left', e.pageX + moveLeft)
+      //.appendTo('body');
+    },
+    function () {
+      $("div#pop__up__catalog").hide();
+    }
+  );
+
+  // $("a.trigger__catalog").mousemove(function (e) {
+  //   $("div#pop__up__catalog")
+  //     .css("top", e.pageY + moveDown)
+  //     .css("left", e.pageX + moveLeft);
+  // });
+});
+
 // Валидация форми ....................................................................................
 
 function checkEmail(emailAddress) {
@@ -162,7 +215,7 @@ var polygonTemplate = polygonSeries.mapPolygons.template;
 
 polygonTemplate.tooltipText = "{name}";
 
-polygonTemplate.fill = am4core.color("#f3f3f3");
+polygonTemplate.fill = am4core.color("#e0e0e0");
 
 // = am4core.color("#f39235");
 
@@ -366,7 +419,6 @@ function updateCustomMarkers(event) {
 function createCustomMarker(image) {
   var chart = image.dataItem.component.chart;
 
-
   // create holder
   var holder = document.createElement("div");
   holder.className = "map-marker ppp_p";
@@ -396,5 +448,3 @@ function createCustomMarker(image) {
 
   return holder;
 }
-
-
