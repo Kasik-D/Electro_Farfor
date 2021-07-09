@@ -498,7 +498,7 @@ if ($(window).width() <= 1025) {
 
     $(".chartdiv__modal__window").click(function (e) {
       $("div#pop-up").show();
-      $(".chartdiv").css("z-index", 0);
+      $(".chartdiv2").css("z-index", 0);
       //.css('top', e.pageY + moveDown)
       //.css('left', e.pageX + moveLeft)
       //.appendTo('body');
@@ -506,7 +506,7 @@ if ($(window).width() <= 1025) {
 
     $(".pop-up_bac").on("click", function () {
       $("div#pop-up").hide();
-      $(".chartdiv").css("z-index", 1);
+      $(".chartdiv2").css("z-index", 1);
     });
 
     $("div.trigger").mousemove(function (e) {
