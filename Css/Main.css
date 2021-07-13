@@ -1182,10 +1182,26 @@ input.form__field {
 }
 
 .about__titile__body {
-  padding: 240px 0px 126px 0px;
+  padding: 100px 0px 126px 0px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.about__titile__photo {
+  flex: 0 1 800px;
+  transform: scale(0);
+  transform: translate(0px, -100%);
+  transition: all 0.8s ease 0.3s;
+}
+
+.about__titile__photo._active {
+  transform: scale(1);
+  transform: translate(0px, 0px);
+}
+
+.about__titile__photo img {
+  max-width: 100%;
 }
 
 .about__titile__label {
@@ -1248,10 +1264,13 @@ input.form__field {
 
 @media (max-width: 1300px) {
   .about__titile__body {
-    padding: 110px 0px 80px 0px;
+    padding: 50px 0px 80px 0px;
   }
   .about__titile__label {
     font-size: 120px;
+  }
+  .about__titile__photo {
+    flex: 0 1 700px;
   }
 }
 
@@ -1259,6 +1278,12 @@ input.form__field {
   .about__titile__label {
     font-size: 80px;
     line-height: 100px;
+  }
+  .about__titile__body {
+    padding: 60px 0px 0px 0px;
+  }
+  .about__titile__photo {
+    flex: 0 1 600px;
   }
 }
 
@@ -2540,4 +2565,54 @@ div#pop-up {
   width: 150px;
   height: 50px;
   position: absolute;
+}
+
+.img__location {
+  background-image: url(/Img/geo-alt-fill.svg);
+  background-repeat: no-repeat;
+  position: relative;
+  transition: 0.3s ease all;
+}
+
+.img__location:hover {
+  transform: scale(1.5);
+}
+
+.img__location_1 {
+  background-size: 16px 16px;
+  width: 16px;
+  height: 16px;
+}
+
+.pop-up__map__text {
+  display: none;
+  position: absolute;
+  width: 180px;
+  padding: 10px;
+  background: #fff;
+  color: #000000;
+  font-size: 14px;
+  top: -74px;
+  left: 10px;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+  z-index: 5;
+  -webkit-box-shadow: 4px -2px 39px -5px rgba(34, 60, 80, 0.12);
+  -moz-box-shadow: 4px -2px 39px -5px rgba(34, 60, 80, 0.12);
+  box-shadow: 4px -2px 39px -5px rgba(34, 60, 80, 0.12);
+  transition: 0.3s ease all;
+}
+
+.pop-up__map__text::after {
+  content: "";
+  position: absolute;
+  top: 46px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 1px solid transparent;
+  border-right: 25px solid transparent;
+  border-top: 24px solid #fff;
 }
