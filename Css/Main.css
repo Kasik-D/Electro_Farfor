@@ -161,12 +161,17 @@ body {
 }
 
 .header__link {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat";
+  font-weight: 400;
   text-decoration: none;
   color: #fff;
   letter-spacing: 4px;
   font-size: 15px;
   position: relative;
+}
+
+.header__link.active__ {
+  font-weight: 700;
 }
 
 .header__link.active__::before {
@@ -218,10 +223,15 @@ body {
 }
 
 .header__language__link {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat";
   color: #fff;
   text-decoration: none;
   position: relative;
+  font-size: 14px;
+}
+
+.header__language__link.active__2 {
+  font-weight: 700;
 }
 
 .header__language__link.active__2::before {
@@ -232,6 +242,7 @@ body {
   bottom: -8px;
   left: 1.5px;
   background-color: #f39235;
+  font-weight: 400;
 }
 
 .header__language__link:after {
@@ -334,13 +345,7 @@ body {
     margin-bottom: 25px;
     text-align: center;
   }
-  .header__link {
-    font-size: 20px;
-    font-family: "Montserrat", sans-serif;
-    text-decoration: none;
-    color: #fff;
-    letter-spacing: 4px;
-  }
+
   .header__burger.active:before {
     transform: rotate(45deg);
     top: 9px;
@@ -616,10 +621,24 @@ body {
 
 .main_about__as__prhoto {
   flex: 0 0 1100px;
+  position: relative;
+  /* height: 900px; */
 }
 
 .main_about__as__prhoto img {
   max-width: 100%;
+}
+
+#parallax {
+  position: absolute;
+  top: -65px;
+  left: 0px;
+  width: 1233px;
+  height: 1100px;
+  background-image: url(/Img/About_as_photo.png);
+  background-repeat: no-repeat;
+  background-size: 1150px 900px;
+  background-position: center;
 }
 
 @media (max-width: 1550px) {
@@ -2575,7 +2594,7 @@ div#pop-up {
 }
 
 .img__location:hover {
-  transform: scale(1.5);
+  transform: scale(1.85);
 }
 
 .img__location_1 {
@@ -2592,7 +2611,7 @@ div#pop-up {
   background: #fff;
   color: #000000;
   font-size: 14px;
-  top: -74px;
+  top: -81px;
   left: 10px;
   font-family: "Montserrat", sans-serif;
   text-align: center;

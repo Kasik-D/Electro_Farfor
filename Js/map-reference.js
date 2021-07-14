@@ -5,7 +5,7 @@ am4core.options.autoSetClassName = true;
 
 // Set map definition
 chart2.geodata = am4geodata_ukraineLow;
-console.log(am4geodata_ukraineLow);
+console.log("done by me -> https://github.com/Kasik-D");
 
 // Set projection
 chart2.projection = new am4maps.projections.Miller();
@@ -38,12 +38,23 @@ var polygonTemplate2 = polygonSeries2.mapPolygons.template;
 
 polygonTemplate2.tooltipText = "{name}";
 
-polygonTemplate2.fill = am4core.color("#e0e0e0");
+polygonTemplate.fill = chart.colors.getIndex(0);
+
+polygonTemplate2.fill = am4core.color("#d3d3d3");
 
 // = am4core.color("#fce3cb");
 
 // Create hover state and set alternative fill color
 var hs2 = polygonTemplate2.states.create("hover");
+
+hs2.properties.fill = chart.colors.getIndex(2);
+
+var activeState = polygonTemplate2.states.create("active");
+activeState.properties.fill = am4core.color("#f39235");
+
+polygonTemplate2.events.on("over", function (ev) {
+  ev.target.isActive = true;
+});
 
 hs2.properties.fill = am4core.color("#f39235");
 
@@ -273,13 +284,6 @@ imageSeries2.data = [
     count: 14,
     name: "«ВІННИЦЬКА»",
     text: "ПС 750 КВ",
-  },
-  {
-    latitude: 49.5,
-    longitude: 28.5,
-    count: 15,
-    name: "«Вінницька»",
-    text: "ПС 330 кВ",
   },
   {
     latitude: 48.5,
