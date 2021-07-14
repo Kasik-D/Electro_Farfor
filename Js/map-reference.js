@@ -56,6 +56,17 @@ polygonTemplate2.events.on("over", function (ev) {
   ev.target.isActive = true;
 });
 
+polygonTemplate2.events.on("out", function (ev) {
+  console.log(ev);
+  console.log(ev.event.relatedTarget.className);
+  if (
+    String(ev.event.relatedTarget.className).indexOf("img__location_1") != -1
+  ) {
+  } else {
+    ev.target.isActive = false;
+  }
+});
+
 hs2.properties.fill = am4core.color("#f39235");
 
 polygonSeries2.exclude = ["AQ"];
