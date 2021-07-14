@@ -1774,6 +1774,16 @@ input.form__field {
   margin: 60px 0px 0px 60px;
 }
 
+.contact_us__contacts__link__icon {
+  font-size: 40px;
+  color: #a3a3a3;
+  transition: 0.7s ease all;
+}
+
+.contact_us__contacts__link__icon:hover {
+  color: #000;
+}
+
 .contact_us__works__time {
   transition: all 0.8s ease 0.7s;
   transform: scale(0);
@@ -1896,7 +1906,7 @@ input.form__field {
 }
 
 .for__partners__body {
-  padding: 100px 0px;
+  padding: 0px 0px 100px;
 }
 
 .for__partners__text {
@@ -1910,13 +1920,13 @@ input.form__field {
 
 @media (max-width: 1200px) {
   .for__partners__body {
-    padding: 80px 0px;
+    padding: 0px 0px 80px;
   }
 }
 
 @media (max-width: 600px) {
   .for__partners__body {
-    padding: 40px 0px;
+    padding: 0px 0px 40px;
   }
 }
 

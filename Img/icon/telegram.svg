@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="46" height="46" viewBox="0 0 46 46">
+  <defs>
+    <style>
+      .cls-1 {
+        opacity: 0.2;
+      }
+    </style>
+  </defs>
+  <image id="telegram" class="cls-1" width="46" height="46" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAYAAABXuSs3AAADJUlEQVRogd2a607bQBCFT+xNIFUolyhFvYD6r1Tq+z9MKwQFoRYIITQRuLlWEx3TxbX3ltiBHslKkJPN57OzM7M2NSyvOoAtAC0AmzxiABFHngGYAkh4DAEMAIyX+eVQcIHaA9AmcIjkAm4A9HhxpYKLk/sAOgBUIHBWEwDXAC45M07yAd8FcMDQKEMSOucAblcFLi4fMjSqkITOmc392ALSAPCJi68qNQHsALgzwZvAm4TeqBA6leIM/+Ia+EdF4KnTZcWzi2I6f5vnfB54vEan81i2Gffz7ImsPlYc0zYpRkDfBC4p792zQf6rplZ5F4q0kzHz9HPVgW60Dr6/5sVoU52MC0Xaa2dNQLnprkCdlDm1vl1hZQS7wx8ATvkaOzZrAj0CcJ82Su2SQUFnpRvs6ouMyv5tkrB2FWMntDV10YCwUkjmBZ/3WVvCWlcl5ewZ3ZV29cHh8w3P8bfUit0eEfbap7cOqNItxa3WspJwuGJHlxcODbbGA24YlgXfXAZ8xh7iyhIObwC81y4uqyggVBbgtp48qzEBupYcvMG+p8WZOC6YjZBmLlaZ6mnSkMD9AgBdqcsRZ+XU8J2QGY9cNrxTujVw+KzuMrhIzy0XGhSqirFqcl3O/3YYS8rxB22snwAuHL4XAj5TdNQELsXhCx3vM15HmR8+zNSDC4K7qBkAPlUst7bKJXcDXvMAwR8Kegwf6Fqg40kK7ls9GwUp7M4DGoQOuZuWRMwWq1LdI0shMExEw8gxW7jqFYAjvpYJPohYUFbpepPwbx3CICS+hXWcTutNwAAm1bjpPrK4GuL4gjUF73luoVwlIfO5wH0VUO4nZH3sU+Z8X0ZvXuO4kkqHmkFt3uzx0SVvyz1psO45mG/T5SpJnx3GdctxDeiStXiStg865JyFZbckcFGNcd0KyN/fae5CWXcTOhKapspSj3cDHpVXLM48d91lKyHTE+XF85yle6/EeHeVxPXXvIxXBDbl6t1ZI7xAfytqqU1QE94L2V7hEzZXJXS6cB9gc3PKhdGocMH2uOMyFsT/+nGhrhf5gFbXi3sknqfq/wkBwB+Q0bmVHEYq/wAAAABJRU5ErkJggg=="/>
+</svg>
