@@ -53,12 +53,13 @@ var activeState = polygonTemplate2.states.create("active");
 activeState.properties.fill = am4core.color("#f39235");
 
 polygonTemplate2.events.on("over", function (ev) {
+  polygonTemplate2.clones.values.forEach((element) => {
+    element.isActive = false;
+  });
   ev.target.isActive = true;
 });
 
 polygonTemplate2.events.on("out", function (ev) {
-  console.log(ev);
-  console.log(ev.event.relatedTarget.className);
   if (
     String(ev.event.relatedTarget.className).indexOf("img__location_1") != -1
   ) {
