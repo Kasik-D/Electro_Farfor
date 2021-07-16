@@ -1,50 +1,122 @@
 // Parallax
 
-(function () {
-  // Add event listener
-  document.addEventListener("mousemove", parallax);
-  const elem = document.querySelector("#parallax");
-  // Magic happens here
-  function parallax(e) {
-    let _w = window.innerWidth / 2;
-    let _h = window.innerHeight / 2;
-    let _mouseX = e.clientX;
-    let _mouseY = e.clientY;
-    let _depth1 = `${50 - (_mouseX - _w) * 0.01}% ${
-      50 - (_mouseY - _h) * 0.01
-    }%`;
-    let _depth2 = `${50 - (_mouseX - _w) * 0.02}% ${
-      50 - (_mouseY - _h) * 0.02
-    }%`;
-    let _depth3 = `${50 - (_mouseX - _w) * 0.06}% ${
-      50 - (_mouseY - _h) * 0.06
-    }%`;
-    let x = `${_depth3}, ${_depth2}, ${_depth1}`;
-    elem.style.backgroundPosition = x;
-  }
-})();
+$(function () {
+  var isMobile = window.matchMedia("only screen and (max-width: 768px)");
+  var moveForce = 30; // max popup movement in pixels
+  var rotateForce = 5; // max popup rotation in deg
+  $(".wrap").mousemove(function (e) {
+    var docX = $(this).outerWidth();
+    var docY = $(this).outerHeight();
 
+    var moveX = ((e.pageX - docX / 2) / (docX / 2)) * -moveForce;
+    var moveY = ((e.pageY - docY / 2) / (docY / 2)) * -moveForce;
 
-(function () {
-  // Add event listener
-  document.addEventListener("mousemove", parallax);
-  const elem = document.querySelector("#parallax__min");
-  // Magic happens here
-  function parallax(e) {
-    let _w = window.innerWidth / 2;
-    let _h = window.innerHeight / 2;
-    let _mouseX = e.clientX;
-    let _mouseY = e.clientY;
-    let _depth1 = `${50 - (_mouseX - _w) * 0.01}% ${
-      50 - (_mouseY - _h) * 0.01
-    }%`;
-    let _depth2 = `${50 - (_mouseX - _w) * 0.02}% ${
-      50 - (_mouseY - _h) * 0.02
-    }%`;
-    let _depth3 = `${50 - (_mouseX - _w) * 0.06}% ${
-      50 - (_mouseY - _h) * 0.06
-    }%`;
-    let x = `${_depth3}, ${_depth2}, ${_depth1}`;
-    elem.style.backgroundPosition = x;
+    var rotateY = (e.pageX / docX) * rotateForce * 2 - rotateForce;
+    var rotateX = -((e.pageY / docY) * rotateForce * 2 - rotateForce);
+
+    $(".wrap").css({
+      "-moz-transform":
+        "rotateX(" +
+        rotateX +
+        "deg" +
+        ") rotateY(" +
+        rotateY +
+        "deg" +
+        ") translateZ(0)",
+      "-webkit-transform":
+        "rotateX(" +
+        rotateX +
+        "deg" +
+        ") rotateY(" +
+        rotateY +
+        "deg" +
+        ") translateZ(0)",
+      "-ms-transform":
+        "rotateX(" +
+        rotateX +
+        "deg" +
+        ") rotateY(" +
+        rotateY +
+        "deg" +
+        ") translateZ(0)",
+      "-o-transform":
+        "rotateX(" +
+        rotateX +
+        "deg" +
+        ") rotateY(" +
+        rotateY +
+        "deg" +
+        ") translateZ(0)",
+      transform:
+        "rotateX(" +
+        rotateX +
+        "deg" +
+        ") rotateY(" +
+        rotateY +
+        "deg" +
+        ") translateZ(0)",
+    });
+  });
+  if (isMobile.matches) {
+    function onDeviceMotion(event) {
+      rotateForce = 10; // max popup rotation in deg
+      var accel = event.accelerationIncludingGravity;
+
+      var docX = $(this).outerWidth();
+      var docY = $(this).outerHeight();
+
+      var accelX = ((accel.x + 10) / 20) * docX;
+      var accelY = ((accel.y + 10) / 20) * docY;
+
+      var moveX = ((accelX - docX) / docX) * -moveForce;
+      var moveY = ((accelY - docY) / docY) * -moveForce;
+
+      var rotateY = -((accelX / docX) * rotateForce * 2 - rotateForce);
+      var rotateX = -((accelY / docY) * rotateForce * 2 - rotateForce);
+
+      $(".").css({
+        "-moz-transform":
+          "rotateX(" +
+          rotateX +
+          "deg" +
+          ") rotateY(" +
+          rotateY +
+          "deg" +
+          ") translateZ(0)",
+        "-webkit-transform":
+          "rotateX(" +
+          rotateX +
+          "deg" +
+          ") rotateY(" +
+          rotateY +
+          "deg" +
+          ") translateZ(0)",
+        "-ms-transform":
+          "rotateX(" +
+          rotateX +
+          "deg" +
+          ") rotateY(" +
+          rotateY +
+          "deg" +
+          ") translateZ(0)",
+        "-o-transform":
+          "rotateX(" +
+          rotateX +
+          "deg" +
+          ") rotateY(" +
+          rotateY +
+          "deg" +
+          ") translateZ(0)",
+        transform:
+          "rotateX(" +
+          rotateX +
+          "deg" +
+          ") rotateY(" +
+          rotateY +
+          "deg" +
+          ") translateZ(0)",
+      });
+    }
+    window.addEventListener("devicemotion", onDeviceMotion, false);
   }
-})();
+});

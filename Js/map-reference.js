@@ -38,7 +38,7 @@ var polygonTemplate2 = polygonSeries2.mapPolygons.template;
 
 polygonTemplate2.tooltipText = "{name}";
 
-polygonTemplate.fill = chart.colors.getIndex(0);
+polygonTemplate2.fill = chart2.colors.getIndex(0);
 
 polygonTemplate2.fill = am4core.color("#d3d3d3");
 
@@ -47,7 +47,7 @@ polygonTemplate2.fill = am4core.color("#d3d3d3");
 // Create hover state and set alternative fill color
 var hs2 = polygonTemplate2.states.create("hover");
 
-hs2.properties.fill = chart.colors.getIndex(2);
+hs2.properties.fill = chart2.colors.getIndex(2);
 
 var activeState = polygonTemplate2.states.create("active");
 activeState.properties.fill = am4core.color("#f39235");
@@ -484,6 +484,13 @@ imageSeries2.data = [
 // add events to recalculate map position when the map is moved or zoomed
 chart2.events.on("ready", updateCustomMarkers);
 chart2.events.on("mappositionchanged", updateCustomMarkers);
+
+
+$(function () {
+  $(".amcharts-Container-group").css({
+    "font-family": '"Montserrat", sans-serif',
+  });
+});
 
 // this function will take current images on the map and create HTML elements for them
 function updateCustomMarkers(event) {

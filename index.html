@@ -11,11 +11,12 @@
     />
     <link rel="stylesheet" href="/Css/Main.css" />
     <link rel="stylesheet" href="/Css/reset.css" />
+    <link rel="stylesheet" href="/Css/animate.css">
     <title>Electro Farfor</title>
   </head>
   <body>
     <div class="wrapper">`
-      <header class="header">
+      <header class="header header_black">
         <div class="header__body">
           <a href="/index.html" class="header__logo">
             <img src="/Img/Logo.png"></img>
@@ -25,7 +26,7 @@
           </div>
           <nav class="header__menu">
             <ul class="header__list">
-              <li><a href="/index.html" class="header__link">Головна</a></li>
+              <li><a href="/index.html" class="header__link active__">Головна</a></li>
               <li><a href="/Html/About_as.html" class="header__link">Про нас</a></li>
               <li><a href="/Html/References.html" class="header__link">Референси</a></li>
               <li><a href="/Html/Catalog.html" class="header__link trigger__catalog">Каталог</a>
@@ -59,6 +60,7 @@
         </div>
       </header>
       <main class="main">
+
           <div class="main_video_body">
             <section id="home">
               <video
@@ -97,8 +99,13 @@
                     <a href="/Html/About_as.html" class="__btn__text" type="button">Детальніше</a>
                   </div>
                 </div>
-                <div class=" main_about__as__prhoto _anim-items _anim-no-hide">
-                  <div id="parallax"></div>
+                <div class="main_about__as__prhoto _anim-items _anim-no-hide">
+                  <div class="wrap">
+                    <div class="background"></div>
+                    <div class="content">
+                    </div>
+                  </div>
+                  <!-- <div id="parallax"></div> -->
                   <img id="main_about__as__prhoto__img" src="/Img/About_as_photo.png" alt="">
                 </div>
               </div>
@@ -111,7 +118,7 @@
                     <h2>Референси</h2>
                   </div>
                   <div class="chartdiv_body _anim-items _anim-no-hide">
-                    <div class="chartdiv"></div>
+                    <div class="chartdiv2"></div>
                     <div class="chartdiv_body__text">
                       <div class="__text__text_container">  
                         <div class="__text__text _anim-items _anim-no-hide">
@@ -306,7 +313,10 @@
     <!-- Подключения jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- Подключения JS файлов-->
+    <script src="/Js/wow.min.js"></script>
+    <script src="/Js/map-reference.js"></script>
     <script src="/Js/Main.js"></script>
     <script src="/Js/Parallax.js"></script>
+  
   </body>
 </html>

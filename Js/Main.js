@@ -1,15 +1,47 @@
+$.fn.animateTransform = function () {
+  for (
+    var a = null, b = null, c = 400, d = function () {}, e = 0;
+    e < arguments.length;
+    e++
+  )
+    "string" == typeof arguments[e]
+      ? a
+        ? (b = arguments[e])
+        : (a = arguments[e])
+      : "number" == typeof arguments[e]
+      ? (c = arguments[e])
+      : "function" == typeof arguments[e] && (d = arguments[e]);
+  if ((a && !b && ((b = a), (a = null)), b)) {
+    a && this.css("transform", a), c < 16 && (c = 16);
+    var f = this.css("transition");
+    this.css("transition", "transform " + c + "ms"), this.css("transform", b);
+    var g = this;
+    setTimeout(function () {
+      g.css("transition", f || ""), g.css("transform", b), d();
+    }, c);
+  }
+};
 
+// Wow js
+new WOW().init();
+
+setTimeout(() => {
+  $(".titile__container").animateTransform("translateY(0px)", 2500);
+}, 2500);
 
 // location
 $(function () {
   var current = location.pathname;
-  $(".header__link").each(function () {
-    var $this = $(this);
-    // if the current path is like this link, make it active
-    if ($this.attr("href").indexOf(current) !== -1) {
-      $this.addClass("active__");
-    }
-  });
+  if (current === "/") {
+  } else {
+    $(".header__link").each(function () {
+      var $this = $(this);
+      // if the current path is like this link, make it active
+      if ($this.attr("href").indexOf(current) !== -1) {
+        $this.addClass("active__");
+      }
+    });
+  }
 });
 
 // pop-up ///////////////////////////////////////////
@@ -192,278 +224,272 @@ if (animItems.length > 0) {
   AnimOnScroll();
 }
 
-am4core.useTheme(am4themes_animated);
+// am4core.useTheme(am4themes_animated);
 
-var chart = am4core.create("chartdiv", am4maps.MapChart);
-am4core.options.autoSetClassName = true;
+// var chart = am4core.create("chartdiv", am4maps.MapChart);
+// am4core.options.autoSetClassName = true;
 
-// Set map definition
-chart.geodata = am4geodata_ukraineLow;
+// // Set map definition
+// chart.geodata = am4geodata_ukraineLow;
 
-// Set projection
-chart.projection = new am4maps.projections.Miller();
+// // Set projection
+// chart.projection = new am4maps.projections.Miller();
 
-// Colors
-var color1 = am4core.color("#000");
+// // Colors
+// var color1 = am4core.color("#000");
 
-chart.homeGeoPoint = {
-  latitude: 48,
-  longitude: 31,
-};
-chart.homeZoomLevel = 0.75;
-chart.minZoomLevel = 0.75;
-chart.maxZoomLevel = 0.75;
-chart.chartContainer.wheelable = false;
-chart.seriesContainer.draggable = false;
-chart.seriesContainer.resizable = false;
+// chart.homeGeoPoint = {
+//   latitude: 48,
+//   longitude: 31,
+// };
+// chart.homeZoomLevel = 0.75;
+// chart.minZoomLevel = 0.75;
+// chart.maxZoomLevel = 0.75;
+// chart.chartContainer.wheelable = false;
+// chart.seriesContainer.draggable = false;
+// chart.seriesContainer.resizable = false;
 
-// Create map polygon series
-var polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());
+// // Create map polygon series
+// var polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());
 
-// // Exclude Antartica
+// // // Exclude Antartica
+// // polygonSeries.exclude = ["AQ"];
+// // polygonSeries.include = ["UA"];
+// // Make map load polygon (like country names) data from GeoJSON
+// polygonSeries.useGeodata = true;
+
+// // Configure series
+// var polygonTemplate = polygonSeries.mapPolygons.template;
+
+// polygonTemplate.tooltipText = "{name}";
+
+// polygonTemplate.fill = am4core.color("#e0e0e0");
+
+// // = am4core.color("#f39235");
+
+// // Create hover state and set alternative fill color
+// var hs = polygonTemplate.states.create("hover");
+
+// hs.properties.fill = am4core.color("#000");
+
 // polygonSeries.exclude = ["AQ"];
-// polygonSeries.include = ["UA"];
-// Make map load polygon (like country names) data from GeoJSON
-polygonSeries.useGeodata = true;
 
-// Configure series
-var polygonTemplate = polygonSeries.mapPolygons.template;
+// polygonSeries.data = [
+//   {
+//     id: "UA-07",
+//     name: "Volyn",
+//     fill: am4core.color("#f39235"),
+//     dataff: "fffe",
+//   },
+//   {
+//     id: "UA-18",
+//     name: "Zhytomyr",
+//     fill: am4core.color("#f39235"),
+//   },
+//   {
+//     id: "UA-59",
+//     name: "Sumy",
+//     fill: am4core.color("#f39235"),
+//   },
+//   {
+//     id: "UA-71",
+//     name: "Cherkasy",
+//     fill: am4core.color("#f39235"),
+//   },
+// ];
 
-polygonTemplate.tooltipText = "{name}";
+// // Bind "fill" property to "fill" key in data
+// polygonTemplate.propertyFields.fill = "fill";
 
-polygonTemplate.fill = am4core.color("#e0e0e0");
+// var imageSeries = chart.series.push(new am4maps.MapImageSeries());
+// var imageTemplate = imageSeries.mapImages.template;
+// imageTemplate.propertyFields.longitude = "longitude";
+// imageTemplate.propertyFields.latitude = "latitude";
+// imageTemplate.nonScaling = true;
 
-// = am4core.color("#f39235");
+// // Creating a pin bullet
+// var pin = imageTemplate.createChild(am4plugins_bullets.PinBullet);
 
-// Create hover state and set alternative fill color
-var hs = polygonTemplate.states.create("hover");
+// // Configuring pin appearance
+// pin.background.fill = color1;
+// pin.background.pointerBaseWidth = 1;
+// pin.background.pointerLength = 250;
+// pin.background.propertyFields.pointerLength = "length";
+// pin.circle.fill = pin.background.fill;
+// pin.fontWeight = "bold";
+// pin.fontFamily = "Montserrat";
+// pin.label = new am4core.Label();
+// pin.label.text = "{title}";
+// pin.label.fill = am4core.color("#fff");
+// pin.fontSize = 12;
+// if (document.documentElement.clientWidth < 770) {
+//   pin.fontSize = 10;
+// }
+// if (document.documentElement.clientWidth < 520) {
+//   pin.fontSize = 7;
+// }
 
-hs.properties.fill = am4core.color("#000");
+// // 770
 
-polygonSeries.exclude = ["AQ"];
+// var label = pin.createChild(am4core.Label);
+// // label.text = "{title}";
+// // label.fontWeight = "bold";
+// // label.propertyFields.dy = "length";
+// // label.verticalCenter = "middle";
+// // label.fill = color1;
+// label.adapter.add("dy", function (dy) {
+//   return (20 + dy) * -1;
+// });
 
-polygonSeries.data = [
-  {
-    id: "UA-07",
-    name: "Volyn",
-    fill: am4core.color("#f39235"),
-    dataff: "fffe",
-  },
-  {
-    id: "UA-18",
-    name: "Zhytomyr",
-    fill: am4core.color("#f39235"),
-  },
-  {
-    id: "UA-59",
-    name: "Sumy",
-    fill: am4core.color("#f39235"),
-  },
-  {
-    id: "UA-71",
-    name: "Cherkasy",
-    fill: am4core.color("#f39235"),
-  },
-];
+// // Creating a "heat rule" to modify "radius" of the bullet based
+// // on value in data
+// imageSeries.heatRules.push({
+//   target: pin.background,
+//   property: "radius",
+//   min: 44,
+//   max: 30,
+//   dataField: "value",
+// });
 
-// Bind "fill" property to "fill" key in data
-polygonTemplate.propertyFields.fill = "fill";
+// if (document.documentElement.clientWidth < 770) {
+//   imageSeries.heatRules.push({
+//     target: pin.background,
+//     property: "radius",
+//     min: 30,
+//     max: 30,
+//     dataField: "value",
+//   });
+// }
 
-var imageSeries = chart.series.push(new am4maps.MapImageSeries());
-var imageTemplate = imageSeries.mapImages.template;
-imageTemplate.propertyFields.longitude = "longitude";
-imageTemplate.propertyFields.latitude = "latitude";
-imageTemplate.nonScaling = true;
+// if (document.documentElement.clientWidth < 520) {
+//   imageSeries.heatRules.push({
+//     target: pin.background,
+//     property: "radius",
+//     min: 20,
+//     max: 24,
+//     dataField: "value",
+//   });
+// }
 
-// Creating a pin bullet
-var pin = imageTemplate.createChild(am4plugins_bullets.PinBullet);
+// imageSeries.heatRules.push({
+//   target: label,
+//   property: "dx",
+//   min: 30,
+//   max: 40,
+//   dataField: "value",
+// });
 
-// Configuring pin appearance
-pin.background.fill = color1;
-pin.background.pointerBaseWidth = 1;
-pin.background.pointerLength = 250;
-pin.background.propertyFields.pointerLength = "length";
-pin.circle.fill = pin.background.fill;
-pin.fontWeight = "bold";
-pin.fontFamily = "Montserrat";
-pin.label = new am4core.Label();
-pin.label.text = "{title}";
-pin.label.fill = am4core.color("#fff");
-pin.fontSize = 12;
-if (document.documentElement.clientWidth < 770) {
-  pin.fontSize = 10;
-}
-if (document.documentElement.clientWidth < 520) {
-  pin.fontSize = 7;
-}
+// imageSeries.heatRules.push({
+//   target: label,
+//   property: "paddingBottom",
+//   min: 0,
+//   max: 10,
+//   dataField: "value",
+// });
 
-// 770
+// //if (document.documentElement.clientWidth < 770)
+// // Pin data
+// imageSeries.data = [
+//   {
+//     latitude: 49,
+//     longitude: 30.8,
+//     value: 12,
+//     title: "Cherkasy",
+//     class: "Cherkasy",
+//     length:
+//       document.documentElement.clientWidth < 400
+//         ? 20
+//         : document.documentElement.clientWidth < 770
+//         ? 40
+//         : 100,
+//   },
+//   {
+//     latitude: 51,
+//     longitude: 25,
+//     value: 5,
+//     title: "Volyn",
+//     length:
+//       document.documentElement.clientWidth < 400
+//         ? 20
+//         : document.documentElement.clientWidth < 770
+//         ? 35
+//         : 70,
+//   },
+//   {
+//     latitude: 51,
+//     longitude: 34,
+//     value: 100000,
+//     title: "Sumy",
+//     length: document.documentElement.clientWidth < 770 ? 40 : 100,
+//   },
+//   {
+//     latitude: 50.5,
+//     longitude: 28.5,
+//     value: 8,
+//     title: "Zhytomyr",
+//     length: document.documentElement.clientWidth < 770 ? 38 : 80,
+//   },
+// ];
 
-var label = pin.createChild(am4core.Label);
-// label.text = "{title}";
-// label.fontWeight = "bold";
-// label.propertyFields.dy = "length";
-// label.verticalCenter = "middle";
-// label.fill = color1;
-label.adapter.add("dy", function (dy) {
-  return (20 + dy) * -1;
-});
+// // add events to recalculate map position when the map is moved or zoomed
+// chart.events.on("ready", updateCustomMarkers);
+// chart.events.on("mappositionchanged", updateCustomMarkers);
 
-// Creating a "heat rule" to modify "radius" of the bullet based
-// on value in data
-imageSeries.heatRules.push({
-  target: pin.background,
-  property: "radius",
-  min: 44,
-  max: 30,
-  dataField: "value",
-});
+// // this function will take current images on the map and create HTML elements for them
+// function updateCustomMarkers(event) {
+//   // go through all of the images
+//   imageSeries.mapImages.each(function (image) {
+//     // check if it has corresponding HTML element
+//     if (!image.dummyData || !image.dummyData.externalElement) {
+//       // create onex
+//       image.dummyData = {
+//         externalElement: createCustomMarker(image),
+//       };
+//     }
 
-if (document.documentElement.clientWidth < 770) {
-  imageSeries.heatRules.push({
-    target: pin.background,
-    property: "radius",
-    min: 30,
-    max: 30,
-    dataField: "value",
-  });
-}
+//     // reposition the element accoridng to coordinates
+//     var xy = chart.geoPointToSVG({
+//       longitude: image.longitude,
+//       latitude: image.latitude,
+//     });
+//     image.dummyData.externalElement.style.top = xy.y + "px";
+//     image.dummyData.externalElement.style.left = xy.x + "px";
+//   });
+// }
 
-if (document.documentElement.clientWidth < 520) {
-  imageSeries.heatRules.push({
-    target: pin.background,
-    property: "radius",
-    min: 20,
-    max: 24,
-    dataField: "value",
-  });
-}
+// // this function creates and returns a new marker element
+// function createCustomMarker(image) {
+//   var chart = image.dataItem.component.chart;
 
-imageSeries.heatRules.push({
-  target: label,
-  property: "dx",
-  min: 30,
-  max: 40,
-  dataField: "value",
-});
+//   // create holder
+//   var holder = document.createElement("div");
+//   holder.className = "map-marker ppp_p";
+//   holder.title = image.dataItem.dataContext.title;
+//   holder.style.position = "absolute";
 
-imageSeries.heatRules.push({
-  target: label,
-  property: "paddingBottom",
-  min: 0,
-  max: 10,
-  dataField: "value",
-});
+//   // maybe add a link to it?
+//   if (undefined != image.url) {
+//     holder.onclick = function () {
+//       window.location.href = image.url;
+//     };
+//     holder.className += " map-clickable";
+//   }
 
-//if (document.documentElement.clientWidth < 770)
-// Pin data
-imageSeries.data = [
-  {
-    latitude: 49,
-    longitude: 30.8,
-    value: 12,
-    title: "Cherkasy",
-    class: "Cherkasy",
-    length:
-      document.documentElement.clientWidth < 400
-        ? 20
-        : document.documentElement.clientWidth < 770
-        ? 40
-        : 100,
-  },
-  {
-    latitude: 51,
-    longitude: 25,
-    value: 5,
-    title: "Volyn",
-    length:
-      document.documentElement.clientWidth < 400
-        ? 20
-        : document.documentElement.clientWidth < 770
-        ? 35
-        : 70,
-  },
-  {
-    latitude: 51,
-    longitude: 34,
-    value: 100000,
-    title: "Sumy",
-    length: document.documentElement.clientWidth < 770 ? 40 : 100,
-  },
-  {
-    latitude: 50.5,
-    longitude: 28.5,
-    value: 8,
-    title: "Zhytomyr",
-    length: document.documentElement.clientWidth < 770 ? 38 : 80,
-  },
-];
+//   // create dot
+//   var dot = document.createElement("div");
+//   dot.className = "dot";
+//   holder.appendChild(dot);
 
-$(function () {
-  $(".amcharts-Container-group").css({
-    "font-family": '"Montserrat", sans-serif',
-  });
-});
+//   // create pulse
+//   var pulse = document.createElement("div");
+//   pulse.className = "pulse";
+//   holder.appendChild(pulse);
 
-// add events to recalculate map position when the map is moved or zoomed
-chart.events.on("ready", updateCustomMarkers);
-chart.events.on("mappositionchanged", updateCustomMarkers);
+//   // append the marker to the map container
+//   chart.svgContainer.htmlElement.appendChild(holder);
 
-// this function will take current images on the map and create HTML elements for them
-function updateCustomMarkers(event) {
-  // go through all of the images
-  imageSeries.mapImages.each(function (image) {
-    // check if it has corresponding HTML element
-    if (!image.dummyData || !image.dummyData.externalElement) {
-      // create onex
-      image.dummyData = {
-        externalElement: createCustomMarker(image),
-      };
-    }
-
-    // reposition the element accoridng to coordinates
-    var xy = chart.geoPointToSVG({
-      longitude: image.longitude,
-      latitude: image.latitude,
-    });
-    image.dummyData.externalElement.style.top = xy.y + "px";
-    image.dummyData.externalElement.style.left = xy.x + "px";
-  });
-}
-
-// this function creates and returns a new marker element
-function createCustomMarker(image) {
-  var chart = image.dataItem.component.chart;
-
-  // create holder
-  var holder = document.createElement("div");
-  holder.className = "map-marker ppp_p";
-  holder.title = image.dataItem.dataContext.title;
-  holder.style.position = "absolute";
-
-  // maybe add a link to it?
-  if (undefined != image.url) {
-    holder.onclick = function () {
-      window.location.href = image.url;
-    };
-    holder.className += " map-clickable";
-  }
-
-  // create dot
-  var dot = document.createElement("div");
-  dot.className = "dot";
-  holder.appendChild(dot);
-
-  // create pulse
-  var pulse = document.createElement("div");
-  pulse.className = "pulse";
-  holder.appendChild(pulse);
-
-  // append the marker to the map container
-  chart.svgContainer.htmlElement.appendChild(holder);
-
-  return holder;
-}
+//   return holder;
+// }
 
 // if ($(window).width() > 3600) {
 //   var moveLeft = -1000;

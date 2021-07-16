@@ -227,7 +227,7 @@ body {
   color: #fff;
   text-decoration: none;
   position: relative;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .header__language__link.active__2 {
@@ -496,6 +496,67 @@ body {
 
 /* MAIN HTML ........................................................................................ */
 
+/* main__title //////////////////////////////////////////////////////////////////////////// */
+
+.main__title {
+}
+
+.main__title__body {
+  min-height: 100vh;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.titile__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transform: translateY(50px);
+}
+
+.titile__img__contaioner {
+  display: flex;
+  transform: translateY();
+}
+
+.titile__img__contaioner__EF {
+  display: flex;
+}
+
+.titile__img__contaioner__electro__farfor {
+  display: flex;
+  flex-direction: column;
+}
+
+.titile__img {
+  /* flex: 0 1 200px; */
+}
+
+.titile__img img {
+  max-width: 100%;
+}
+
+.titile__text__contaioner {
+  display: flex;
+  margin-top: 10px;
+}
+
+.titile__text__contaioner__text {
+  margin: 0px 2px;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.titile_lol {
+  height: 50px;
+}
+
 /* Main video ////////////////////////////////////////////////////////////////////////////////////// */
 
 #home {
@@ -633,32 +694,50 @@ body {
   max-width: 100%;
 }
 
-#parallax {
-  position: absolute;
-  top: -65px;
-  left: 0px;
-  width: 100%;
-  height: 850px;
-  background-image: url(/Img/About_as_photo.png);
-  background-repeat: no-repeat;
-  background-size: 98% auto;
-  background-position: center;
-}
-
-#parallax__min {
-  position: absolute;
-  top: -65px;
-  left: 0px;
-  width: 100%;
-  height: 700px;
-  background-image: url(/Img/About_as_photo.png);
-  background-repeat: no-repeat;
-  background-size: 98% auto;
-  background-position: center;
-}
-
 #main_about__as__prhoto__img {
   display: none;
+}
+
+.wrap {
+  top: 0;
+  left: 0;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  transition: transform 100ms linear;
+  box-sizing: border-box;
+  padding: 300px 30px 300px 30px;
+}
+
+.background {
+  display: block;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  bottom: -100px;
+  right: -100px;
+  background-image: url(/Img/About_as_photo.png);
+  background-size: cover;
+  -webkit-transform: translateZ(150px);
+  -ms-transform: translateZ(150px);
+  transform: translateZ(150px);
+}
+
+.content {
+  display: block;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(300px);
+  -ms-transform: translateZ(300px);
+  transform: translateZ(300px);
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  max-width: 350px;
 }
 
 @media (max-width: 1550px) {
@@ -800,7 +879,7 @@ body {
 
 .chartdiv2 {
   width: 100%;
-  height: 750px;
+  height: 850px;
   position: relative;
   z-index: 2;
 }
@@ -809,6 +888,7 @@ body {
   position: absolute;
   bottom: 96px;
   left: 50px;
+  z-index: 5;
 }
 
 .__text__text_container {
@@ -943,7 +1023,7 @@ body {
 }
 
 .our__partners__body {
-  padding: 120px 0px;
+  padding: 40px 0px 40px;
 }
 
 .our__partners__photos {
@@ -1238,11 +1318,13 @@ input.form__field {
 .about__titile__photo {
   flex: 0 1 800px;
   transform: scale(0);
-  transform: translate(0px, -100%);
+  opacity: 0;
+  transform: translate(200%, 0px);
   transition: all 0.8s ease 0.3s;
 }
 
 .about__titile__photo._active {
+  opacity: 1;
   transform: scale(1);
   transform: translate(0px, 0px);
 }
@@ -1713,6 +1795,10 @@ input.form__field {
   transform: translate(0px, -120%);
   opacity: 0;
   transition: all 0.8s ease 0.7s;
+}
+
+.contact_us__contacts__link a {
+  text-decoration: none;
 }
 
 .contact_us__contacts__links__._active {
@@ -2534,6 +2620,7 @@ div#pop-up {
   font-size: 22px;
   font-weight: 700;
   margin: 0px -25px;
+  max-width: 414px;
 }
 
 @media (max-width: 1490px) {
