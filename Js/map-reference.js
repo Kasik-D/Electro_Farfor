@@ -577,10 +577,12 @@ $(function () {
   $(".trigger__map__text__1").hover(
     function (e) {
       $(".pop-up__map__text__1").show();
+      $(".pop-up__map__text__1").animate({ opacity: 1 }, 500);
       $(".pop-up__map__text__1").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__1").hide();
+      $(".pop-up__map__text__1").css("opacity", "0");
     }
   );
 });
@@ -589,10 +591,12 @@ $(function () {
   $(".trigger__map__text__2").hover(
     function (e) {
       $(".pop-up__map__text__2").show();
+      $(".pop-up__map__text__2").animate({ opacity: 1 }, 500);
       $(".pop-up__map__text__2").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__2").hide();
+      $(".pop-up__map__text__2").css("opacity", "0");
     }
   );
 });
@@ -601,10 +605,12 @@ $(function () {
   $(".trigger__map__text__3").hover(
     function (e) {
       $(".pop-up__map__text__3").show();
+      $(".pop-up__map__text__3").animate({ opacity: 1 }, 500);
       $(".pop-up__map__text__3").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__3").hide();
+      $(".pop-up__map__text__3").css("opacity", "0");
     }
   );
 });
@@ -613,10 +619,12 @@ $(function () {
   $(".trigger__map__text__4").hover(
     function (e) {
       $(".pop-up__map__text__4").show();
+      $(".pop-up__map__text__4").animate({ opacity: 1 }, 500);
       $(".pop-up__map__text__4").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__4").hide();
+      $(".pop-up__map__text__4").css("opacity", "0");
     }
   );
 });
@@ -625,10 +633,12 @@ $(function () {
   $(".trigger__map__text__5").hover(
     function (e) {
       $(".pop-up__map__text__5").show();
+      $(".pop-up__map__text__5").animate({ opacity: 1 }, 500);
       $(".pop-up__map__text__5").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__5").hide();
+      $(".pop-up__map__text__5").css("opacity", "0");
     }
   );
 });
@@ -637,10 +647,12 @@ $(function () {
   $(".trigger__map__text__6").hover(
     function (e) {
       $(".pop-up__map__text__6").show();
+      $(".pop-up__map__text__6").animate({ opacity: 1 }, 500);
       $(".pop-up__map__text__6").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__6").hide();
+      $(".pop-up__map__text__6").css("opacity", "0");
     }
   );
 });
@@ -649,10 +661,12 @@ $(function () {
   $(".trigger__map__text__7").hover(
     function (e) {
       $(".pop-up__map__text__7").show();
+      $(".pop-up__map__text__7").animate({ opacity: 1 }, 500);
       $(".pop-up__map__text__7").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__7").hide();
+      $(".pop-up__map__text__7").css("opacity", "0");
     }
   );
 });
@@ -661,10 +675,12 @@ $(function () {
   $(".trigger__map__text__8").hover(
     function (e) {
       $(".pop-up__map__text__8").show();
+      $(".pop-up__map__text__8").animate({ opacity: 1 }, 500);
       $(".pop-up__map__text__8").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__8").hide();
+      $(".pop-up__map__text__8").css("opacity", "0");
     }
   );
 });
@@ -673,10 +689,12 @@ $(function () {
   $(".trigger__map__text__9").hover(
     function (e) {
       $(".pop-up__map__text__9").show();
+      $(".pop-up__map__text__9").animate({ opacity: 1 }, 500);
       $(".pop-up__map__text__9").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__9").hide();
+      $(".pop-up__map__text__9").css("opacity", "0");
     }
   );
 });
@@ -685,10 +703,12 @@ $(function () {
   $(".trigger__map__text__10").hover(
     function (e) {
       $(".pop-up__map__text__10").show();
+      $(".pop-up__map__text__10").animate({ opacity: 1 }, 500);
       $(".pop-up__map__text__10").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__10").hide();
+      $(".pop-up__map__text__10").css("opacity", "0");
     }
   );
 });
@@ -697,10 +717,12 @@ $(function () {
   $(".trigger__map__text__11").hover(
     function (e) {
       $(".pop-up__map__text__11").show();
+      $(".pop-up__map__text__11").animate({ opacity: 1 }, 500);
       $(".pop-up__map__text__11").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__11").hide();
+      $(".pop-up__map__text__11").css("opacity", "0");
     }
   );
 });
@@ -709,10 +731,12 @@ $(function () {
   $(".trigger__map__text__12").hover(
     function (e) {
       $(".pop-up__map__text__12").show();
+      $(".pop-up__map__text__12").animate({ opacity: 1 }, 500);
       $(".pop-up__map__text__12").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__12").hide();
+      $(".pop-up__map__text__12").css("opacity", "0");
     }
   );
 });
@@ -721,10 +745,12 @@ $(function () {
   $(".trigger__map__text__13").hover(
     function (e) {
       $(".pop-up__map__text__13").show();
+      $(".pop-up__map__text__13").animate({ opacity: 1 }, 500);
       $(".pop-up__map__text__13").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__13").hide();
+      $(".pop-up__map__text__13").css("opacity", "0");
     }
   );
 });
@@ -733,10 +759,12 @@ $(function () {
   $(".trigger__map__text__14").hover(
     function (e) {
       $(".pop-up__map__text__14").show();
+      $(".pop-up__map__text__14").animate({ opacity: 1 }, 500);
       $(".pop-up__map__text__14").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__14").hide();
+      $(".pop-up__map__text__14").css("opacity", "0");
     }
   );
 });
@@ -745,10 +773,12 @@ $(function () {
   $(".trigger__map__text__15").hover(
     function (e) {
       $(".pop-up__map__text__15").show();
+      $(".pop-up__map__text__15").animate({ opacity: 1 }, 500);
       $(".pop-up__map__text__15").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__15").hide();
+      $(".pop-up__map__text__15").css("opacity", "0");
     }
   );
 });
@@ -756,10 +786,12 @@ $(function () {
   $(".trigger__map__text__16").hover(
     function (e) {
       $(".pop-up__map__text__16").show();
+      $(".pop-up__map__text__16").animate({ opacity: 1 }, 500);
       $(".pop-up__map__text__16").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__16").hide();
+      $(".pop-up__map__text__16").css("opacity", "0");
     }
   );
 });
@@ -767,10 +799,12 @@ $(function () {
   $(".trigger__map__text__17").hover(
     function (e) {
       $(".pop-up__map__text__17").show();
+      $(".pop-up__map__text__17").animate({ opacity: 1 }, 500);
       $(".pop-up__map__text__17").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__17").hide();
+      $(".pop-up__map__text__17").css("opacity", "0");
     }
   );
 });
@@ -778,10 +812,12 @@ $(function () {
   $(".trigger__map__text__18").hover(
     function (e) {
       $(".pop-up__map__text__18").show();
+      $(".pop-up__map__text__18").animate({ opacity: 1 }, 500);
       $(".pop-up__map__text__18").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__18").hide();
+      $(".pop-up__map__text__18").css("opacity", "0");
     }
   );
 });
@@ -789,10 +825,12 @@ $(function () {
   $(".trigger__map__text__19").hover(
     function (e) {
       $(".pop-up__map__text__19").show();
+      $(".pop-up__map__text__19").animate({ opacity: 1 }, 500);
       $(".pop-up__map__text__19").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__19").hide();
+      $(".pop-up__map__text__19").css("opacity", "0");
     }
   );
 });
@@ -800,10 +838,12 @@ $(function () {
   $(".trigger__map__text__20").hover(
     function (e) {
       $(".pop-up__map__text__20").show();
+      $(".pop-up__map__text__20").animate({ opacity: 1 }, 500);
       $(".pop-up__map__text__20").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__20").hide();
+      $(".pop-up__map__text__20").css("opacity", "0");
     }
   );
 });
@@ -811,10 +851,12 @@ $(function () {
   $(".trigger__map__text__21").hover(
     function (e) {
       $(".pop-up__map__text__21").show();
+      $(".pop-up__map__text__21").animate({ opacity: 1 }, 500);
       $(".pop-up__map__text__21").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__21").hide();
+      $(".pop-up__map__text__21").css("opacity", "0");
     }
   );
 });
@@ -822,10 +864,12 @@ $(function () {
   $(".trigger__map__text__22").hover(
     function (e) {
       $(".pop-up__map__text__22").show();
+      $(".pop-up__map__text__22").animate({ opacity: 1 }, 500);
       $(".pop-up__map__text__22").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__22").hide();
+      $(".pop-up__map__text__22").css("opacity", "0");
     }
   );
 });
@@ -833,10 +877,12 @@ $(function () {
   $(".trigger__map__text__23").hover(
     function (e) {
       $(".pop-up__map__text__23").show();
+      $(".pop-up__map__text__23").animate({ opacity: 1 }, 500);
       $(".pop-up__map__text__23").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__23").hide();
+      $(".pop-up__map__text__23").css("opacity", "0");
     }
   );
 });
@@ -844,10 +890,12 @@ $(function () {
   $(".trigger__map__text__24").hover(
     function (e) {
       $(".pop-up__map__text__24").show();
+      $(".pop-up__map__text__24").animate({ opacity: 1 }, 500);
       $(".pop-up__map__text__24").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__24").hide();
+      $(".pop-up__map__text__24").css("opacity", "0");
     }
   );
 });
@@ -855,10 +903,12 @@ $(function () {
   $(".trigger__map__text__25").hover(
     function (e) {
       $(".pop-up__map__text__25").show();
+      $(".pop-up__map__text__25").animate({ opacity: 1 }, 500);
       $(".pop-up__map__text__25").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__25").hide();
+      $(".pop-up__map__text__25").css("opacity", "0");
     }
   );
 });
@@ -866,10 +916,12 @@ $(function () {
   $(".trigger__map__text__26").hover(
     function (e) {
       $(".pop-up__map__text__26").show();
+      $(".pop-up__map__text__26").animate({ opacity: 1 }, 500);
       $(".pop-up__map__text__26").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__26").hide();
+      $(".pop-up__map__text__26").css("opacity", "0");
     }
   );
 });
@@ -877,10 +929,12 @@ $(function () {
   $(".trigger__map__text__27").hover(
     function (e) {
       $(".pop-up__map__text__27").show();
+      $(".pop-up__map__text__27").animate({ opacity: 1 }, 500);
       $(".pop-up__map__text__27").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__27").hide();
+      $(".pop-up__map__text__27").css("opacity", "0");
     }
   );
 });
@@ -888,10 +942,12 @@ $(function () {
   $(".trigger__map__text__28").hover(
     function (e) {
       $(".pop-up__map__text__28").show();
+      $(".pop-up__map__text__28").animate({ opacity: 1 }, 500);
       $(".pop-up__map__text__28").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__28").hide();
+      $(".pop-up__map__text__28").css("opacity", "0");
     }
   );
 });
@@ -899,10 +955,12 @@ $(function () {
   $(".trigger__map__text__29").hover(
     function (e) {
       $(".pop-up__map__text__29").show();
+      $(".pop-up__map__text__29").animate({ opacity: 1 }, 500);
       $(".pop-up__map__text__29").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__29").hide();
+      $(".pop-up__map__text__29").css("opacity", "0");
     }
   );
 });
@@ -910,10 +968,12 @@ $(function () {
   $(".trigger__map__text__30").hover(
     function (e) {
       $(".pop-up__map__text__30").show();
+      $(".pop-up__map__text__30").animate({ opacity: 1 }, 500);
       $(".pop-up__map__text__30").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__30").hide();
+      $(".pop-up__map__text__30").css("opacity", "0");
     }
   );
 });
@@ -921,10 +981,12 @@ $(function () {
   $(".trigger__map__text__31").hover(
     function (e) {
       $(".pop-up__map__text__31").show();
+      $(".pop-up__map__text__31").animate({ opacity: 1 }, 500);
       $(".pop-up__map__text__31").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__31").hide();
+      $(".pop-up__map__text__31").css("opacity", "0");
     }
   );
 });
@@ -932,10 +994,12 @@ $(function () {
   $(".trigger__map__text__32").hover(
     function (e) {
       $(".pop-up__map__text__32").show();
+      $(".pop-up__map__text__32").animate({ opacity: 1 }, 500);
       $(".pop-up__map__text__32").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__32").hide();
+      $(".pop-up__map__text__32").css("opacity", "0");
     }
   );
 });
@@ -943,10 +1007,12 @@ $(function () {
   $(".trigger__map__text__33").hover(
     function (e) {
       $(".pop-up__map__text__33").show();
+      $(".pop-up__map__text__33").animate({ opacity: 1 }, 500);
       $(".pop-up__map__text__33").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__33").hide();
+      $(".pop-up__map__text__33").css("opacity", "0");
     }
   );
 });
@@ -954,10 +1020,12 @@ $(function () {
   $(".trigger__map__text__34").hover(
     function (e) {
       $(".pop-up__map__text__34").show();
+      $(".pop-up__map__text__34").animate({ opacity: 1 }, 500);
       $(".pop-up__map__text__34").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__34").hide();
+      $(".pop-up__map__text__34").css("opacity", "0");
     }
   );
 });
@@ -965,10 +1033,12 @@ $(function () {
   $(".trigger__map__text__35").hover(
     function (e) {
       $(".pop-up__map__text__35").show();
+      $(".pop-up__map__text__35").animate({ opacity: 1 }, 500);
       $(".pop-up__map__text__35").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__35").hide();
+      $(".pop-up__map__text__35").css("opacity", "0");
     }
   );
 });
@@ -976,10 +1046,12 @@ $(function () {
   $(".trigger__map__text__36").hover(
     function (e) {
       $(".pop-up__map__text__36").show();
+      $(".pop-up__map__text__36").animate({ opacity: 1 }, 500);
       $(".pop-up__map__text__36").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__36").hide();
+      $(".pop-up__map__text__36").css("opacity", "0");
     }
   );
 });
@@ -987,10 +1059,12 @@ $(function () {
   $(".trigger__map__text__37").hover(
     function (e) {
       $(".pop-up__map__text__37").show();
+      $(".pop-up__map__text__37").animate({ opacity: 1 }, 500);
       $(".pop-up__map__text__37").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__37").hide();
+      $(".pop-up__map__text__37").css("opacity", "0");
     }
   );
 });
@@ -998,10 +1072,12 @@ $(function () {
   $(".trigger__map__text__38").hover(
     function (e) {
       $(".pop-up__map__text__38").show();
+      $(".pop-up__map__text__38").animate({ opacity: 1 }, 500);
       $(".pop-up__map__text__38").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__38").hide();
+      $(".pop-up__map__text__38").css("opacity", "0");
     }
   );
 });
@@ -1009,10 +1085,12 @@ $(function () {
   $(".trigger__map__text__39").hover(
     function (e) {
       $(".pop-up__map__text__39").show();
+      $(".pop-up__map__text__39").animate({ opacity: 1 }, 500);
       $(".pop-up__map__text__39").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__39").hide();
+      $(".pop-up__map__text__39").css("opacity", "0");
     }
   );
 });
@@ -1020,10 +1098,12 @@ $(function () {
   $(".trigger__map__text__40").hover(
     function (e) {
       $(".pop-up__map__text__40").show();
+      $(".pop-up__map__text__40").animate({ opacity: 1 }, 500);
       $(".pop-up__map__text__40").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__40").hide();
+      $(".pop-up__map__text__40").css("opacity", "0");
     }
   );
 });
@@ -1031,10 +1111,12 @@ $(function () {
   $(".trigger__map__text__41").hover(
     function (e) {
       $(".pop-up__map__text__41").show();
+      $(".pop-up__map__text__41").animate({ opacity: 1 }, 500);
       $(".pop-up__map__text__41").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__41").hide();
+      $(".pop-up__map__text__41").css("opacity", "0");
     }
   );
 });
@@ -1042,10 +1124,12 @@ $(function () {
   $(".trigger__map__text__42").hover(
     function (e) {
       $(".pop-up__map__text__42").show();
+      $(".pop-up__map__text__42").animate({ opacity: 1 }, 500);
       $(".pop-up__map__text__42").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__42").hide();
+      $(".pop-up__map__text__42").css("opacity", "0");
     }
   );
 });
@@ -1053,10 +1137,12 @@ $(function () {
   $(".trigger__map__text__43").hover(
     function (e) {
       $(".pop-up__map__text__43").show();
+      $(".pop-up__map__text__43").animate({ opacity: 1 }, 500);
       $(".pop-up__map__text__43").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__43").hide();
+      $(".pop-up__map__text__43").css("opacity", "0");
     }
   );
 });
@@ -1064,10 +1150,12 @@ $(function () {
   $(".trigger__map__text__44").hover(
     function (e) {
       $(".pop-up__map__text__44").show();
+      $(".pop-up__map__text__44").animate({ opacity: 1 }, 500);
       $(".pop-up__map__text__44").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__44").hide();
+      $(".pop-up__map__text__44").css("opacity", "0");
     }
   );
 });
@@ -1075,10 +1163,12 @@ $(function () {
   $(".trigger__map__text__45").hover(
     function (e) {
       $(".pop-up__map__text__45").show();
+      $(".pop-up__map__text__45").animate({ opacity: 1 }, 500);
       $(".pop-up__map__text__45").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__45").hide();
+      $(".pop-up__map__text__45").css("opacity", "0");
     }
   );
 });

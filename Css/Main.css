@@ -669,7 +669,7 @@ body {
 }
 
 .main_about__as__body {
-  padding: 90px 0px;
+  padding: 222px 0px 90px;
   display: flex;
   justify-content: space-between;
 }
@@ -708,7 +708,7 @@ body {
   transform: translateZ(0);
   transition: transform 100ms linear;
   box-sizing: border-box;
-  padding: 300px 30px 300px 30px;
+  padding: 377px 30px 377px 30px;
 }
 
 .background {
@@ -720,8 +720,10 @@ body {
   left: -100px;
   bottom: -100px;
   right: -100px;
+  inset: -100px;
   background-image: url(/Img/About_as_photo.png);
-  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: contain;
   -webkit-transform: translateZ(150px);
   -ms-transform: translateZ(150px);
   transform: translateZ(150px);
@@ -738,6 +740,21 @@ body {
   overflow: hidden;
   margin: 0 auto;
   max-width: 350px;
+}
+
+@media (max-width: 1800px) {
+  .background {
+    inset: -50px;
+  }
+  .main_about__as__body {
+    padding: 100px 0px 90px;
+  }
+}
+
+@media (max-width: 1700px) {
+  .background {
+    inset: 0px;
+  }
 }
 
 @media (max-width: 1550px) {
@@ -762,8 +779,8 @@ body {
     display: block;
   }
 
-  #parallax {
-    background-image: none;
+  .wrap {
+    display: none;
   }
 
   .main_about__as__text {
@@ -2735,6 +2752,7 @@ div#pop-up {
 }
 
 .pop-up__map__text {
+  opacity: 0;
   display: none;
   position: absolute;
   border-radius: 50%;
