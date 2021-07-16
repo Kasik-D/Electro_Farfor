@@ -35,8 +35,12 @@ $(function () {
   if (current === "/") {
   } else {
     $(".header__link").each(function () {
+      console.log("A");
       var $this = $(this);
+
+      console.log(current);
       // if the current path is like this link, make it active
+      console.log($this.attr("href"));
       if ($this.attr("href").indexOf(current) !== -1) {
         $this.addClass("active__");
       }
