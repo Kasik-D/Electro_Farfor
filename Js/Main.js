@@ -23,7 +23,11 @@ $.fn.animateTransform = function () {
 };
 
 // Wow js
-new WOW().init();
+
+if (location.pathname.indexOf("About_as.html") !== -1) {
+  new WOW().init();
+  console.log("a");
+}
 
 setTimeout(() => {
   $(".titile__container").animateTransform("translateY(0px)", 2500);
@@ -35,12 +39,12 @@ $(function () {
   if (current === "/") {
   } else {
     $(".header__link").each(function () {
-      console.log("A");
+      // console.log("A");
       var $this = $(this);
 
-      console.log(current);
+      // console.log(current);
       // if the current path is like this link, make it active
-      console.log($this.attr("href"));
+      // console.log($this.attr("href"));
       if ($this.attr("href").indexOf(current) !== -1) {
         $this.addClass("active__");
       }
