@@ -2083,6 +2083,7 @@ input.form__field {
   margin-left: -8px;
   margin-top: -8px;
   box-sizing: border-box;
+  position: absolute;
 }
 .map-marker.map-clickable {
   cursor: pointer;
@@ -2090,17 +2091,16 @@ input.form__field {
 .pulse {
   width: 10px;
   height: 10px;
-  border: 5px solid #f7f14c;
+  border: 5px solid #000;
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
   border-radius: 30px;
   background-color: #716f42;
-  z-index: 10;
   position: absolute;
   box-sizing: border-box;
 }
 .map-marker .dot {
-  border: 10px solid #fff601;
+  border: 10px solid #000;
   background: transparent;
   -webkit-border-radius: 60px;
   -moz-border-radius: 60px;
@@ -2116,7 +2116,6 @@ input.form__field {
   position: absolute;
   top: -20px;
   left: -20px;
-  z-index: 1;
   opacity: 0;
   box-sizing: border-box;
 }
@@ -2729,7 +2728,7 @@ div#pop-up {
   transform: scale(1.85);
 }
 
-.img__location_1 {
+.map-marker {
   background-size: 16px 16px;
   width: 16px;
   height: 16px;
@@ -2738,18 +2737,21 @@ div#pop-up {
 .pop-up__map__text {
   display: none;
   position: absolute;
-  width: 180px;
-  padding: 10px;
-  background: #fff;
-  color: #000000;
-  font-size: 14px;
-  top: -81px;
-  left: 10px;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  background: #000;
+  color: #fff;
+  font-size: 12px;
+  top: -204px;
+  left: -54px;
   font-family: "Montserrat", sans-serif;
   text-align: center;
   font-weight: 700;
   text-transform: uppercase;
   z-index: 5;
+  justify-content: center;
+  align-items: center;
   -webkit-box-shadow: 4px -2px 39px -5px rgba(34, 60, 80, 0.12);
   -moz-box-shadow: 4px -2px 39px -5px rgba(34, 60, 80, 0.12);
   box-shadow: 4px -2px 39px -5px rgba(34, 60, 80, 0.12);
@@ -2759,11 +2761,11 @@ div#pop-up {
 .pop-up__map__text::after {
   content: "";
   position: absolute;
-  top: 46px;
-  left: 0;
+  top: 119px;
+  left: 57px;
   width: 0;
   height: 0;
-  border-left: 1px solid transparent;
-  border-right: 25px solid transparent;
-  border-top: 24px solid #fff;
+  border-left: 2px solid transparent;
+  border-right: 2px solid transparent;
+  border-top: 93px solid #000;
 }

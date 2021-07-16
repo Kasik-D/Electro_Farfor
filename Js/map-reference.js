@@ -61,12 +61,21 @@ polygonTemplate2.events.on("over", function (ev) {
 
 polygonTemplate2.events.on("out", function (ev) {
   if (
-    String(ev.event.relatedTarget.className).indexOf("img__location_1") != -1
+    String(ev.event.relatedTarget.className).indexOf("map-marker") != -1 ||
+    String(ev.event.relatedTarget.className).indexOf("dot") != -1 ||
+    String(ev.event.relatedTarget.className).indexOf("pulse") != -1
   ) {
   } else {
     ev.target.isActive = false;
   }
 });
+
+// polygonTemplate2.events.on("out", function (ev) {
+//   if (String(ev.event.relatedTarget.className).indexOf("dot") != -1) {
+//   } else {
+//     ev.target.isActive = false;
+//   }
+// });
 
 hs2.properties.fill = am4core.color("#f39235");
 
@@ -76,113 +85,112 @@ polygonSeries2.data = [
   {
     id: "UA-07",
     name: "Volyn",
-    fill: am4core.color("#fce3cb"),
-    dataff: "fffe",
+    fill: am4core.color("#d3d3d3"),
   },
   {
     id: "UA-18",
     name: "Zhytomyr",
-    fill: am4core.color("#fce3cb"),
+    fill: am4core.color("#d3d3d3"),
   },
   {
     id: "UA-59",
     name: "Sumy",
-    fill: am4core.color("#fce3cb"),
+    fill: am4core.color("#d3d3d3"),
   },
   {
     id: "UA-71",
     name: "Cherkasy",
-    fill: am4core.color("#fce3cb"),
+    fill: am4core.color("#d3d3d3"),
   },
   {
     id: "UA-12",
     name: "Dnipropetrovsk",
-    fill: am4core.color("#fce3cb"),
+    fill: am4core.color("#d3d3d3"),
   },
   {
     id: "UA-23",
     name: "Zaporizhzhya",
-    fill: am4core.color("#fce3cb"),
+    fill: am4core.color("#d3d3d3"),
   },
   {
     name: "Lviv",
     id: "UA-46",
-    fill: am4core.color("#fce3cb"),
+    fill: am4core.color("#d3d3d3"),
   },
   {
     name: "Ivano-Frankivsk",
     id: "UA-26",
-    fill: am4core.color("#fce3cb"),
+    fill: am4core.color("#d3d3d3"),
   },
   {
     name: "Zaporizhzhya",
     id: "UA-23",
-    fill: am4core.color("#fce3cb"),
+    fill: am4core.color("#d3d3d3"),
   },
   {
     name: "Vinnytsia",
     id: "UA-05",
-    fill: am4core.color("#fce3cb"),
+    fill: am4core.color("#d3d3d3"),
   },
   {
     name: "Chernihiv",
     id: "UA-74",
-    fill: am4core.color("#fce3cb"),
+    fill: am4core.color("#d3d3d3"),
   },
   {
     name: "Mykolaiv",
     id: "UA-48",
-    fill: am4core.color("#fce3cb"),
+    fill: am4core.color("#d3d3d3"),
   },
   {
     name: "Poltava",
     id: "UA-53",
-    fill: am4core.color("#fce3cb"),
+    fill: am4core.color("#d3d3d3"),
   },
   {
     name: "Kharkiv",
     id: "UA-63",
-    fill: am4core.color("#fce3cb"),
+    fill: am4core.color("#d3d3d3"),
   },
   {
     name: "Kyiv",
     id: "UA-32",
-    fill: am4core.color("#fce3cb"),
+    fill: am4core.color("#d3d3d3"),
   },
   {
     name: "Kyiv City",
     id: "UA-30",
-    fill: am4core.color("#fce3cb"),
+    fill: am4core.color("#d3d3d3"),
   },
   {
     name: "Rivne",
     id: "UA-56",
-    fill: am4core.color("#fce3cb"),
+    fill: am4core.color("#d3d3d3"),
   },
   {
     name: "Zakarpattia",
     id: "UA-21",
-    fill: am4core.color("#fce3cb"),
+    fill: am4core.color("#d3d3d3"),
   },
   {
     name: "Chernivtsi",
     id: "UA-77",
-    fill: am4core.color("#fce3cb"),
+    fill: am4core.color("#d3d3d3"),
   },
   {
     name: "Kherson",
     id: "UA-65",
-    fill: am4core.color("#fce3cb"),
+    fill: am4core.color("#d3d3d3"),
   },
   {
     name: "Khmelnytskyi",
     id: "UA-68",
-    fill: am4core.color("#fce3cb"),
+    fill: am4core.color("#d3d3d3"),
   },
   {
     name: "Donetsk",
     id: "UA-14",
-    fill: am4core.color("#fce3cb"),
+    fill: am4core.color("#d3d3d3"),
   },
 ];
 
@@ -350,7 +358,7 @@ imageSeries2.data = [
     latitude: 50.7,
     longitude: 33.6,
     count: 23,
-    name: "«ПІВНІЧНОУКРАЇНСЬКА»",
+    name: "«ПІВНІЧНО-УКРАЇНСЬКА»",
     text: "ПС 750 КВ",
   },
   {
@@ -485,7 +493,6 @@ imageSeries2.data = [
 chart2.events.on("ready", updateCustomMarkers);
 chart2.events.on("mappositionchanged", updateCustomMarkers);
 
-
 $(function () {
   $(".amcharts-Container-group").css({
     "font-family": '"Montserrat", sans-serif',
@@ -519,10 +526,21 @@ function createCustomMarker(image) {
   var chart2 = image.dataItem.component.chart;
 
   // create holder
+
   var holder = document.createElement("div");
-  holder.className = "map-marker";
-  //   holder.title = image.dataItem.dataContext.title;
+  holder.className = `map-marker trigger__map__text__${image.dataItem.dataContext.count}`;
   holder.style.position = "absolute";
+
+  // maybe add a link to it?
+  // create dot
+  var dot = document.createElement("div");
+  dot.className = "dot";
+  holder.appendChild(dot);
+
+  // create pulse
+  var pulse = document.createElement("div");
+  pulse.className = "pulse";
+  holder.appendChild(pulse);
 
   // maybe add a link to it?
 
@@ -536,12 +554,12 @@ function createCustomMarker(image) {
   // console.log(image);
 
   // create dot
-  var dot = document.createElement("div");
-  dot.className = `img__location_1 img__location trigger__map__text__${image.dataItem.dataContext.count}`;
-  holder.appendChild(dot);
+  // var dot = document.createElement("div");
+  // dot.className = `img__location_1 img__location trigger__map__text__${image.dataItem.dataContext.count}`;
+  // holder.appendChild(dot);
 
   var text = document.createElement("div");
-  text.className = ` pop-up__map__text pop-up__map__text__${image.dataItem.dataContext.count}`;
+  text.className = `pop-up__map__text pop-up__map__text__${image.dataItem.dataContext.count}`;
   text.innerHTML = `<p>${image.dataItem.dataContext.text} <br> ${image.dataItem.dataContext.name} </p>`;
   holder.appendChild(text);
   // create pulse
@@ -559,6 +577,7 @@ $(function () {
   $(".trigger__map__text__1").hover(
     function (e) {
       $(".pop-up__map__text__1").show();
+      $(".pop-up__map__text__1").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__1").hide();
@@ -570,6 +589,7 @@ $(function () {
   $(".trigger__map__text__2").hover(
     function (e) {
       $(".pop-up__map__text__2").show();
+      $(".pop-up__map__text__2").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__2").hide();
@@ -581,6 +601,7 @@ $(function () {
   $(".trigger__map__text__3").hover(
     function (e) {
       $(".pop-up__map__text__3").show();
+      $(".pop-up__map__text__3").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__3").hide();
@@ -592,6 +613,7 @@ $(function () {
   $(".trigger__map__text__4").hover(
     function (e) {
       $(".pop-up__map__text__4").show();
+      $(".pop-up__map__text__4").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__4").hide();
@@ -603,6 +625,7 @@ $(function () {
   $(".trigger__map__text__5").hover(
     function (e) {
       $(".pop-up__map__text__5").show();
+      $(".pop-up__map__text__5").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__5").hide();
@@ -614,6 +637,7 @@ $(function () {
   $(".trigger__map__text__6").hover(
     function (e) {
       $(".pop-up__map__text__6").show();
+      $(".pop-up__map__text__6").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__6").hide();
@@ -625,6 +649,7 @@ $(function () {
   $(".trigger__map__text__7").hover(
     function (e) {
       $(".pop-up__map__text__7").show();
+      $(".pop-up__map__text__7").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__7").hide();
@@ -636,6 +661,7 @@ $(function () {
   $(".trigger__map__text__8").hover(
     function (e) {
       $(".pop-up__map__text__8").show();
+      $(".pop-up__map__text__8").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__8").hide();
@@ -647,6 +673,7 @@ $(function () {
   $(".trigger__map__text__9").hover(
     function (e) {
       $(".pop-up__map__text__9").show();
+      $(".pop-up__map__text__9").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__9").hide();
@@ -658,6 +685,7 @@ $(function () {
   $(".trigger__map__text__10").hover(
     function (e) {
       $(".pop-up__map__text__10").show();
+      $(".pop-up__map__text__10").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__10").hide();
@@ -669,6 +697,7 @@ $(function () {
   $(".trigger__map__text__11").hover(
     function (e) {
       $(".pop-up__map__text__11").show();
+      $(".pop-up__map__text__11").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__11").hide();
@@ -680,6 +709,7 @@ $(function () {
   $(".trigger__map__text__12").hover(
     function (e) {
       $(".pop-up__map__text__12").show();
+      $(".pop-up__map__text__12").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__12").hide();
@@ -691,6 +721,7 @@ $(function () {
   $(".trigger__map__text__13").hover(
     function (e) {
       $(".pop-up__map__text__13").show();
+      $(".pop-up__map__text__13").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__13").hide();
@@ -702,6 +733,7 @@ $(function () {
   $(".trigger__map__text__14").hover(
     function (e) {
       $(".pop-up__map__text__14").show();
+      $(".pop-up__map__text__14").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__14").hide();
@@ -713,6 +745,7 @@ $(function () {
   $(".trigger__map__text__15").hover(
     function (e) {
       $(".pop-up__map__text__15").show();
+      $(".pop-up__map__text__15").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__15").hide();
@@ -723,6 +756,7 @@ $(function () {
   $(".trigger__map__text__16").hover(
     function (e) {
       $(".pop-up__map__text__16").show();
+      $(".pop-up__map__text__16").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__16").hide();
@@ -733,6 +767,7 @@ $(function () {
   $(".trigger__map__text__17").hover(
     function (e) {
       $(".pop-up__map__text__17").show();
+      $(".pop-up__map__text__17").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__17").hide();
@@ -743,6 +778,7 @@ $(function () {
   $(".trigger__map__text__18").hover(
     function (e) {
       $(".pop-up__map__text__18").show();
+      $(".pop-up__map__text__18").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__18").hide();
@@ -753,6 +789,7 @@ $(function () {
   $(".trigger__map__text__19").hover(
     function (e) {
       $(".pop-up__map__text__19").show();
+      $(".pop-up__map__text__19").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__19").hide();
@@ -763,6 +800,7 @@ $(function () {
   $(".trigger__map__text__20").hover(
     function (e) {
       $(".pop-up__map__text__20").show();
+      $(".pop-up__map__text__20").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__20").hide();
@@ -773,6 +811,7 @@ $(function () {
   $(".trigger__map__text__21").hover(
     function (e) {
       $(".pop-up__map__text__21").show();
+      $(".pop-up__map__text__21").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__21").hide();
@@ -783,6 +822,7 @@ $(function () {
   $(".trigger__map__text__22").hover(
     function (e) {
       $(".pop-up__map__text__22").show();
+      $(".pop-up__map__text__22").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__22").hide();
@@ -793,6 +833,7 @@ $(function () {
   $(".trigger__map__text__23").hover(
     function (e) {
       $(".pop-up__map__text__23").show();
+      $(".pop-up__map__text__23").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__23").hide();
@@ -803,6 +844,7 @@ $(function () {
   $(".trigger__map__text__24").hover(
     function (e) {
       $(".pop-up__map__text__24").show();
+      $(".pop-up__map__text__24").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__24").hide();
@@ -813,6 +855,7 @@ $(function () {
   $(".trigger__map__text__25").hover(
     function (e) {
       $(".pop-up__map__text__25").show();
+      $(".pop-up__map__text__25").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__25").hide();
@@ -823,6 +866,7 @@ $(function () {
   $(".trigger__map__text__26").hover(
     function (e) {
       $(".pop-up__map__text__26").show();
+      $(".pop-up__map__text__26").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__26").hide();
@@ -833,6 +877,7 @@ $(function () {
   $(".trigger__map__text__27").hover(
     function (e) {
       $(".pop-up__map__text__27").show();
+      $(".pop-up__map__text__27").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__27").hide();
@@ -843,6 +888,7 @@ $(function () {
   $(".trigger__map__text__28").hover(
     function (e) {
       $(".pop-up__map__text__28").show();
+      $(".pop-up__map__text__28").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__28").hide();
@@ -853,6 +899,7 @@ $(function () {
   $(".trigger__map__text__29").hover(
     function (e) {
       $(".pop-up__map__text__29").show();
+      $(".pop-up__map__text__29").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__29").hide();
@@ -863,6 +910,7 @@ $(function () {
   $(".trigger__map__text__30").hover(
     function (e) {
       $(".pop-up__map__text__30").show();
+      $(".pop-up__map__text__30").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__30").hide();
@@ -873,6 +921,7 @@ $(function () {
   $(".trigger__map__text__31").hover(
     function (e) {
       $(".pop-up__map__text__31").show();
+      $(".pop-up__map__text__31").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__31").hide();
@@ -883,6 +932,7 @@ $(function () {
   $(".trigger__map__text__32").hover(
     function (e) {
       $(".pop-up__map__text__32").show();
+      $(".pop-up__map__text__32").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__32").hide();
@@ -893,6 +943,7 @@ $(function () {
   $(".trigger__map__text__33").hover(
     function (e) {
       $(".pop-up__map__text__33").show();
+      $(".pop-up__map__text__33").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__33").hide();
@@ -903,6 +954,7 @@ $(function () {
   $(".trigger__map__text__34").hover(
     function (e) {
       $(".pop-up__map__text__34").show();
+      $(".pop-up__map__text__34").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__34").hide();
@@ -913,6 +965,7 @@ $(function () {
   $(".trigger__map__text__35").hover(
     function (e) {
       $(".pop-up__map__text__35").show();
+      $(".pop-up__map__text__35").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__35").hide();
@@ -923,6 +976,7 @@ $(function () {
   $(".trigger__map__text__36").hover(
     function (e) {
       $(".pop-up__map__text__36").show();
+      $(".pop-up__map__text__36").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__36").hide();
@@ -933,6 +987,7 @@ $(function () {
   $(".trigger__map__text__37").hover(
     function (e) {
       $(".pop-up__map__text__37").show();
+      $(".pop-up__map__text__37").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__37").hide();
@@ -943,6 +998,7 @@ $(function () {
   $(".trigger__map__text__38").hover(
     function (e) {
       $(".pop-up__map__text__38").show();
+      $(".pop-up__map__text__38").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__38").hide();
@@ -953,6 +1009,7 @@ $(function () {
   $(".trigger__map__text__39").hover(
     function (e) {
       $(".pop-up__map__text__39").show();
+      $(".pop-up__map__text__39").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__39").hide();
@@ -963,6 +1020,7 @@ $(function () {
   $(".trigger__map__text__40").hover(
     function (e) {
       $(".pop-up__map__text__40").show();
+      $(".pop-up__map__text__40").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__40").hide();
@@ -973,6 +1031,7 @@ $(function () {
   $(".trigger__map__text__41").hover(
     function (e) {
       $(".pop-up__map__text__41").show();
+      $(".pop-up__map__text__41").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__41").hide();
@@ -983,6 +1042,7 @@ $(function () {
   $(".trigger__map__text__42").hover(
     function (e) {
       $(".pop-up__map__text__42").show();
+      $(".pop-up__map__text__42").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__42").hide();
@@ -993,6 +1053,7 @@ $(function () {
   $(".trigger__map__text__43").hover(
     function (e) {
       $(".pop-up__map__text__43").show();
+      $(".pop-up__map__text__43").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__43").hide();
@@ -1003,6 +1064,7 @@ $(function () {
   $(".trigger__map__text__44").hover(
     function (e) {
       $(".pop-up__map__text__44").show();
+      $(".pop-up__map__text__44").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__44").hide();
@@ -1013,6 +1075,7 @@ $(function () {
   $(".trigger__map__text__45").hover(
     function (e) {
       $(".pop-up__map__text__45").show();
+      $(".pop-up__map__text__45").css("display", "flex");
     },
     function () {
       $(".pop-up__map__text__45").hide();
