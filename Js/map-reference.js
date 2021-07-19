@@ -27,10 +27,6 @@ chart2.seriesContainer.resizable = false;
 // Create map polygon series
 var polygonSeries2 = chart2.series.push(new am4maps.MapPolygonSeries());
 
-// // Exclude Antartica
-// polygonSeries2.exclude = ["AQ"];
-// polygonSeries2.include = ["UA"];
-// Make map load polygon (like country names) data from GeoJSON
 polygonSeries2.useGeodata = true;
 
 // Configure series
@@ -42,8 +38,6 @@ polygonTemplate2.fill = chart2.colors.getIndex(0);
 
 polygonTemplate2.fill = am4core.color("#d3d3d3");
 
-// = am4core.color("#fce3cb");
-
 // Create hover state and set alternative fill color
 var hs2 = polygonTemplate2.states.create("hover");
 
@@ -53,6 +47,7 @@ var activeState = polygonTemplate2.states.create("active");
 activeState.properties.fill = am4core.color("#f39235");
 
 polygonTemplate2.events.on("over", function (ev) {
+  console.log(ev);
   polygonTemplate2.clones.values.forEach((element) => {
     element.isActive = false;
   });
@@ -86,11 +81,49 @@ polygonSeries2.data = [
     id: "UA-07",
     name: "Volyn",
     fill: am4core.color("#d3d3d3"),
+    hoverable: false,
+  },
+  {
+    name: "Ternopil",
+    id: "UA-61",
+    fill: am4core.color("#d3d3d3"),
+    hoverable: false,
+  },
+  {
+    name: "Odessa",
+    id: "UA-51",
+    fill: am4core.color("#d3d3d3"),
+    hoverable: false,
+  },
+  {
+    name: "Luhansk",
+    id: "UA-09",
+    fill: am4core.color("#d3d3d3"),
+    hoverable: false,
+  },
+  {
+    name: "Sevastopol",
+    id: "UA-40",
+    fill: am4core.color("#d3d3d3"),
+    hoverable: false,
+  },
+  {
+    name: "Kirovohrad",
+    id: "UA-35",
+    fill: am4core.color("#d3d3d3"),
+    hoverable: false,
+  },
+  {
+    name: "Crimea",
+    id: "UA-43",
+    fill: am4core.color("#d3d3d3"),
+    hoverable: false,
   },
   {
     id: "UA-18",
     name: "Zhytomyr",
     fill: am4core.color("#d3d3d3"),
+    hoverable: false,
   },
   {
     id: "UA-59",
@@ -196,6 +229,7 @@ polygonSeries2.data = [
 
 // Bind "fill" property to "fill" key in data
 polygonTemplate2.propertyFields.fill = "fill";
+polygonTemplate2.propertyFields.interactionsEnabled = "hoverable";
 
 var imageSeries2 = chart2.series.push(new am4maps.MapImageSeries());
 var imageTemplate2 = imageSeries2.mapImages.template;
@@ -488,6 +522,8 @@ imageSeries2.data = [
     text: "ТЕС",
   },
 ];
+
+// console.log(polygonTemplate2.clones.values);
 
 // add events to recalculate map position when the map is moved or zoomed
 chart2.events.on("ready", updateCustomMarkers);
