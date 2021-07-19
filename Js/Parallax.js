@@ -3,7 +3,7 @@
 $(function () {
   var isMobile = window.matchMedia("only screen and (max-width: 768px)");
   var moveForce = 30; // max popup movement in pixels
-  var rotateForce = 5; // max popup rotation in deg
+  var rotateForce = 3.5; // max popup rotation in deg
   $(".wrap").mousemove(function (e) {
     var docX = $(this).outerWidth();
     var docY = $(this).outerHeight();
@@ -65,8 +65,9 @@ $(function () {
       var docX = $(this).outerWidth();
       var docY = $(this).outerHeight();
 
-      var accelX = ((accel.x + 10) / 20) * docX;
-      var accelY = ((accel.y + 10) / 20) * docY;
+      var accelX = ((accel.x - 30) / 200) * docX;
+      var accelY = ((accel.y - 30) / 200) * docY;
+
 
       var moveX = ((accelX - docX) / docX) * -moveForce;
       var moveY = ((accelY - docY) / docY) * -moveForce;
