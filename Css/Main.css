@@ -1372,7 +1372,7 @@ input.form__field {
   flex: 0 1 800px;
   transform: scale(0);
   opacity: 0;
-  transform: translate(200%, 0px);
+  transform: translate(0px, 0px);
   transition: all 0.8s ease 0.3s;
 }
 
