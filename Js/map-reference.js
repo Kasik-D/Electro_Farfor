@@ -47,7 +47,10 @@ var activeState = polygonTemplate2.states.create("active");
 activeState.properties.fill = am4core.color("#f39235");
 
 polygonTemplate2.events.on("over", function (ev) {
-  console.log(ev);
+  ev.target.dataItem.dataContext.dot_arr.forEach((el) => {
+    $(`.dot__${el}`).css("border", "10px solid #000");
+    $(`.pulse__${el}`).css("border", "5px solid #000");
+  });
   polygonTemplate2.clones.values.forEach((element) => {
     element.isActive = false;
   });
@@ -62,6 +65,8 @@ polygonTemplate2.events.on("out", function (ev) {
   ) {
   } else {
     ev.target.isActive = false;
+    $(".dot").css("border", "10px solid #f39235");
+    $(".pulse").css("border", "5px solid #f39235");
   }
 });
 
@@ -129,101 +134,115 @@ polygonSeries2.data = [
     id: "UA-59",
     name: "Sumy",
     fill: am4core.color("#d3d3d3"),
+    dot_arr: [23, 26],
   },
   {
     id: "UA-71",
     name: "Cherkasy",
     fill: am4core.color("#d3d3d3"),
+    dot_arr: [30],
   },
   {
     id: "UA-12",
     name: "Dnipropetrovsk",
     fill: am4core.color("#d3d3d3"),
+    dot_arr: [1, 2, 3, 4],
   },
   {
     id: "UA-23",
     name: "Zaporizhzhya",
     fill: am4core.color("#d3d3d3"),
+    dot_arr: [5, 6, 7, 32],
   },
   {
     name: "Lviv",
     id: "UA-46",
     fill: am4core.color("#d3d3d3"),
+    dot_arr: [8, 9, 10],
   },
   {
     name: "Ivano-Frankivsk",
     id: "UA-26",
     fill: am4core.color("#d3d3d3"),
-  },
-  {
-    name: "Zaporizhzhya",
-    id: "UA-23",
-    fill: am4core.color("#d3d3d3"),
+    dot_arr: [11, 39],
   },
   {
     name: "Vinnytsia",
     id: "UA-05",
     fill: am4core.color("#d3d3d3"),
+    dot_arr: [14],
   },
   {
     name: "Chernihiv",
     id: "UA-74",
     fill: am4core.color("#d3d3d3"),
+    dot_arr: [29],
   },
   {
     name: "Mykolaiv",
     id: "UA-48",
     fill: am4core.color("#d3d3d3"),
+    dot_arr: [33, 18, 20, 21],
   },
   {
     name: "Poltava",
     id: "UA-53",
     fill: am4core.color("#d3d3d3"),
+    dot_arr: [22],
   },
   {
     name: "Kharkiv",
     id: "UA-63",
     fill: am4core.color("#d3d3d3"),
+    dot_arr: [24, 41, 25],
   },
   {
     name: "Kyiv",
     id: "UA-32",
     fill: am4core.color("#d3d3d3"),
+    dot_arr: [27, 28, 31, 37],
   },
   {
     name: "Kyiv City",
     id: "UA-30",
     fill: am4core.color("#d3d3d3"),
+    dot_arr: [36],
   },
   {
     name: "Rivne",
     id: "UA-56",
     fill: am4core.color("#d3d3d3"),
+    dot_arr: [12, 35],
   },
   {
     name: "Zakarpattia",
     id: "UA-21",
     fill: am4core.color("#d3d3d3"),
+    dot_arr: [13],
   },
   {
     name: "Chernivtsi",
     id: "UA-77",
     fill: am4core.color("#d3d3d3"),
+    dot_arr: [16],
   },
   {
     name: "Kherson",
     id: "UA-65",
     fill: am4core.color("#d3d3d3"),
+    dot_arr: [17, 19],
   },
   {
     name: "Khmelnytskyi",
     id: "UA-68",
     fill: am4core.color("#d3d3d3"),
+    dot_arr: [34],
   },
   {
     name: "Donetsk",
     id: "UA-14",
     fill: am4core.color("#d3d3d3"),
+    dot_arr: [40, 38],
   },
 ];
 
@@ -570,12 +589,12 @@ function createCustomMarker(image) {
   // maybe add a link to it?
   // create dot
   var dot = document.createElement("div");
-  dot.className = "dot";
+  dot.className = `dot dot__${image.dataItem.dataContext.count}`;
   holder.appendChild(dot);
 
   // create pulse
   var pulse = document.createElement("div");
-  pulse.className = "pulse";
+  pulse.className = `pulse pulse__${image.dataItem.dataContext.count}`;
   holder.appendChild(pulse);
 
   // maybe add a link to it?

@@ -2108,7 +2108,7 @@ input.form__field {
 .pulse {
   width: 10px;
   height: 10px;
-  border: 5px solid #000;
+  border: 5px solid #f39235;
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
   border-radius: 30px;
@@ -2117,7 +2117,7 @@ input.form__field {
   box-sizing: border-box;
 }
 .map-marker .dot {
-  border: 10px solid #000;
+  border: 10px solid #f39235;
   background: transparent;
   -webkit-border-radius: 60px;
   -moz-border-radius: 60px;
