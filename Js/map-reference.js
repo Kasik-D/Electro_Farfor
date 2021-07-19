@@ -50,6 +50,7 @@ polygonTemplate2.events.on("over", function (ev) {
   ev.target.dataItem.dataContext.dot_arr.forEach((el) => {
     $(`.dot__${el}`).css("border", "10px solid #000");
     $(`.pulse__${el}`).css("border", "5px solid #000");
+    $(`.pulse__${el}`).css("background-color", "#000");
   });
   polygonTemplate2.clones.values.forEach((element) => {
     element.isActive = false;
@@ -67,6 +68,7 @@ polygonTemplate2.events.on("out", function (ev) {
     ev.target.isActive = false;
     $(".dot").css("border", "10px solid #f39235");
     $(".pulse").css("border", "5px solid #f39235");
+    $(".pulse").css("background-color", "#f39235");
   }
 });
 
