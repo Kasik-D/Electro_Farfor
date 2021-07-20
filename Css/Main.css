@@ -711,6 +711,19 @@ body {
   padding: 377px 30px 377px 30px;
 }
 
+.wrap__2 {
+  top: 0;
+  left: 0;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  transition: transform 100ms linear;
+  box-sizing: border-box;
+  padding: 377px 30px 377px 30px;
+}
+
 .background {
   display: block;
   -webkit-backface-visibility: hidden;
@@ -780,6 +793,9 @@ body {
   }
 
   .wrap {
+    display: none;
+  }
+  .wrap__2 {
     display: none;
   }
 
