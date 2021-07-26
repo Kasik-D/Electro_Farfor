@@ -26,7 +26,6 @@ $.fn.animateTransform = function () {
 
 if (location.pathname.indexOf("About_as.html") !== -1) {
   new WOW().init();
-  console.log("a");
 }
 
 setTimeout(() => {

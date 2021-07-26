@@ -1,3 +1,5 @@
+//  done by me ->  https://github.com/Kasik-D
+
 am4core.useTheme(am4themes_animated);
 
 var chart2 = am4core.create("chartdiv2", am4maps.MapChart);
@@ -5,7 +7,8 @@ am4core.options.autoSetClassName = true;
 
 // Set map definition
 chart2.geodata = am4geodata_ukraineLow;
-console.log("done by me -> https://github.com/Kasik-D");
+
+
 
 // Set projection
 chart2.projection = new am4maps.projections.Miller();
