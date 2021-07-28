@@ -136,6 +136,7 @@ let form = document.querySelector(".validate_form");
 let name_input = document.querySelector(".form__field_name");
 let phone_input = document.querySelector(".form__field_phone");
 let email_input = document.querySelector(".form__field_email");
+let company_input = document.querySelector(".form__field_company");
 
 $(".form__field_phone").keyup(function () {
   var Value = $(".form__field_phone");
@@ -155,6 +156,11 @@ if (!form) {
       $(".phone").addClass("detailed_catalog_phone_input_validate");
     } else {
       $(".phone").removeClass("detailed_catalog_phone_input_validate");
+    }
+    if (company_input.value.length < 2) {
+      $(".company").addClass("detailed_catalog_company_input_validate");
+    } else {
+      $(".company").removeClass("detailed_catalog_company_input_validate");
     }
     if (!checkEmail(email_input.value)) {
       $(".email").addClass("detailed_catalog_email_input_validate");

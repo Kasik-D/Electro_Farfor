@@ -945,6 +945,13 @@ body {
   }
 }
 
+@media (max-width: 330px) {
+  .__btn__text {
+    font-size: 14px;
+    padding: 10px 19px;
+  }
+}
+
 /* main_map  ////////////////////////////////////////////////////////////////////////////////////// */
 
 .main_map {
@@ -1429,6 +1436,10 @@ input.form__field {
 }
 
 .detailed_catalog_email_input_validate {
+  display: block;
+}
+
+.detailed_catalog_company_input_validate {
   display: block;
 }
 
